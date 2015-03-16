@@ -1,0 +1,100 @@
+@CHARSET "windows-1256";
+
+/* ~~ the header is not given a width. 
+It will extend the full width of your layout. 
+It contains an image placeholder that should be replaced with your own linked logo ~~ 
+*/
+
+/* ~~ Body Start ~~ */
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;  /*#4E5869; */
+	background-size:cover;
+	/*background:url(Images/Background.jpg) no-repeat center center fixed;*/  
+	
+	/*color: #0033CC; /*#000*/
+}
+/* ~~ Body End ~~ */
+
+
+/* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+.MyContainer {
+	width: 90%;
+	height:70%;
+    margin: 30px auto ; 
+    /*background-color: #33CC33 ;*/   
+}
+
+/* ~~ My Side Bar Start ~~ */
+.MySidebar {
+	margin-top: 40px;
+	float: right;
+	width: 20%;
+	height:50%;	
+	/*background-color: #3F7EF3 /*#93A5C4*/;
+	/*padding-bottom: 0px;
+    /*background:url(Images/SidebarBackground.jpg);*/
+}
+/* ~~ My Side Bar End ~~ */
+
+
+/* ~~ My Navigation Section Start ~~ */
+ul.MyNavigationSection {
+ 
+ width: 40%;
+ list-style: none; 
+ /*border-color: #FF9999;*/
+ margin-top: 50px;
+ /*margin-bottom: 15px;*/ 
+}
+
+ul.MyNavigationSection li {
+ /*border-bottom: 1px solid #666; /* this creates the button separation */
+ font-family:Arial, Helvetica, sans-serif;
+ font-style:italic;
+ font-size: 18px;
+ margin-bottom: 20px;
+}
+
+/* grouping these selectors makes sure that your links retain their button look even after being visited */
+
+ul.MyNavigationSection a, ul.MyNavigationSection a:visited , li.MyService li{
+ border-radius: 30px ;
+ transition: background 1s linear 0s , color 1s linear 0s ;	 
+ padding: 5px 5px 5px 15px;
+ display: block; 
+ /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+ text-decoration: none;
+ background-color: #99CCFF;
+ color: #000;
+}
+
+/* this changes the background and text color for both mouse and keyboard navigators */
+ul.MyNavigationSection a:hover, ul.MyNavigationSection a:active, ul.MyNavigationSection a:focus { 
+	background-color: #F90 /*#6F7D94*/ ;
+	color: #FFF;
+	font-weight:bold;
+}
+
+/* ~~ My Navigation Section End ~~ */
+
+.MyContent{	
+  margin-top:20px;
+  margin-left:20px;
+  padding-top:30px;
+  width: 70%;
+  height:50%;
+  float: none;
+  color:#3F7EF3;
+  /*background:#CCFF99; 
+  /*padding-bottom:20px;*/
+  /*background:url(Images/ContentBackground.jpg) center fixed;*/
+}
+
+.MyContent > h2 {
+/*	background:#F00; */
+	font-size:20px;
+	font-weight:bold;
+	color:#DADADA;
+	margin-left:20px;
+}
