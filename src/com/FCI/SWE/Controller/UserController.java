@@ -43,8 +43,8 @@ import com.google.appengine.labs.repackaged.org.json.JSONException;
 @Path("/")
 @Produces("text/html")
 public class UserController {
-	private String Domain_Name = "http://1-dot-mhgbx317.appspot.com" ;
-							   //"http://localhost:8888" ;
+	private String Domain_Name = //"http://1-dot-mhgbx317.appspot.com" ;
+							   "http://localhost:8888" ;
 	/**
 	 * Action function to render Signup page, this function will be executed
 	 * using url like this /rest/signup
@@ -220,8 +220,10 @@ public class UserController {
 			JSONObject object = (JSONObject) obj;
 			if (object.get("Status").equals("OK"))
 				return "Friend Request Has Been Sent Successfully.";
+
 			else if(object.get("Status").equals("Friend Email Does Not Exist") )
 			    return "Friend Email Does Not Exist , So You Can't Add Him.";
+			
 			else if( object.get("Status").equals("You Can't Add Yourself") )
 				return "You Can't Add Yourself.";
 		} 

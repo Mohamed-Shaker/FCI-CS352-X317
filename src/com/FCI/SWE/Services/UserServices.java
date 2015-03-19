@@ -139,7 +139,8 @@ public class UserServices {
 		}
 		else 
 		{
-		  object.put("Status", "OK");	
+		  UserEntity.Send_Friend_Request(UserEmail, FriendEmailToAdd);
+		  object.put("Status", "OK");
 		}
 		
 		return object.toString();
