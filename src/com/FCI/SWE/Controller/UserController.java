@@ -1,18 +1,8 @@
 package com.FCI.SWE.Controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -20,15 +10,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
 import org.glassfish.jersey.server.mvc.Viewable;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
+import com.FCI.SWE.Models.MyModel;
 import com.FCI.SWE.Models.User;
+import com.FCI.SWE.Services.GroupChat;
 import com.FCI.SWE.ServicesModels.UserEntity;
-import com.google.appengine.labs.repackaged.org.json.JSONArray;
 import com.google.appengine.labs.repackaged.org.json.JSONException;
 
 /**
@@ -239,7 +228,8 @@ public class UserController {
 	 */
 	@POST
 	@Path("/checkFriendRequests")
-	public Response CheckFriendRequests() {
+	public Response CheckFriendRequests() 
+	{
 		String UserEmail = User.getCurrentActiveUser().getEmail();
 		System.out.println("Email : " + UserEmail );
 		Vector<String> FEmail = UserEntity.get_Friend_Requests( UserEmail );
@@ -291,5 +281,428 @@ public class UserController {
 		catch (ParseException e) { e.printStackTrace(); }
 		return "Friend Request Has Been Not Accepted";
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@POST
+	@Path("/ListOfMyFriends")
+	public Response ListOfMyFriends( @FormParam("UserEmail") String UserEmail )
+	{
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Vector<String> MyFriends = UserEntity.Get_MyFriends( UserEmail );
+		//for( String S : MyFriends )
+		//	System.out.println( "Email : " + S );
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		MyMap.put("MyFriend", MyFriends );	
+		return Response.ok(new Viewable("/jsp/ShowMyFriends" , MyMap ) ).build();
+	} 
+	
+	/**
+	 * This Method is used to make user able to send a single message to anyone of his friends 
+	 * @param UserEmail    Email Of User Who Sends The Message  
+	 * @param FriendEmail  FriendEmail To Send The Message To 
+	 * @param MsgContent   Message Content To Send And Be Retrieved 
+	 * @return <Code>String</Code>
+	 */
+	@POST
+	@Path("/SendMsg")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String SendMsg( 
+			               @FormParam("UserEmail") String UserEmail ,
+                           @FormParam("FriendEmail") String FriendEmail , 
+                           @FormParam("MsgContent") String MsgContent
+                          )
+	{
+		String serviceUrl = Domain_Name + "/rest/SendMsg";
+		String urlParameters = "UserEmail=" +  UserEmail   
+				             + "&FriendEmail=" + FriendEmail
+				             + "&MsgContent=" + MsgContent ;
+		
+		String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+				"application/x-www-form-urlencoded;charset=UTF-8");
+		JSONParser parser = new JSONParser();
+		Object obj;
+		try 
+		{
+			obj = parser.parse(retJson); 
+			JSONObject object = (JSONObject) obj;
+			
+			if (object.get("Status").equals("Msg Has Not Been Sent") )
+				return "Msg Has Not Been Sent";
+			
+			else if(object.get("Status").equals("Msg Has Been Sent") )
+				return "Msg Has Been Sent";
+		} 
+		catch (ParseException e) { e.printStackTrace(); }
+	 	return "There Is A Problem In Sending Single Message Process" ; 
+	}
+	
+	@POST
+	@Path("/CheckRecievedMsgs")
+	public Response CheckRecievedMsgs( @FormParam("UserEmail") String UserEmail )
+	{
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		Vector<String> MyMsg = UserEntity.Get_MyMessages(UserEmail);
+		MyMap.put( "MyMsg" , MyMsg );
+		
+		return Response.ok(new Viewable("/jsp/Messages/CheckMyMessages" , MyMap ) ).build();
+	} 
+	
+	@POST
+	@Path("/CheckMyNotification")
+	public Response CheckMyNotification( 
+			                           @FormParam("UserEmail") String UserEmail 
+			                         )
+	{
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		Vector<String> MyNotification = UserEntity.Get_My_Notification(UserEmail);
+		MyMap.put( "MyNotification" , MyNotification );
+		return Response.ok(new Viewable("/jsp/Notifications/CheckMyNotifications" , MyMap ) ).build();
+	}
+	
+	@POST
+	@Path("/SendGroupChatMsg")
+	public Response SendGroupChatMsg( 
+			                           @FormParam("UserEmail") String UserEmail 
+			                         )
+	{
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Vector<String> MyFriends = UserEntity.Get_MyFriends( UserEmail );
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		MyMap.put("MyFriend", MyFriends );
+		return Response.ok(new Viewable("/jsp/Messages/SendGroupChat" , MyMap ) ).build();
+	}
+	
+	/**
+	 * This Method is used to make user able to send a single message to anyone of his friends 
+	 * @param UserEmail    Email Of User Who Sends The Message  
+	 * @param FriendEmail  FriendEmail To Send The Message To 
+	 * @param MsgContent   Message Content To Send And Be Retrieved 
+	 * @return <Code>String</Code>
+	 */
+	
+	@POST
+	@Path("/SendGroupChatController")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String SendGroupChat( 
+			               @FormParam("UserEmail") String UserEmail ,
+                           @FormParam("FriendsEmail") String FriendsEmail , 
+                           @FormParam("MsgContent") String MsgContent
+                          )
+	{
+		System.out.println("Send Group Chat Msg.");
+		
+		FriendsEmail += "," + UserEmail ;
+		String serviceUrl = Domain_Name + "/rest/SendGroupChat";
+		String urlParameters = "UserEmail=" +  UserEmail   
+				             + "&FriendsEmail=" + FriendsEmail
+				             + "&MsgContent=" + MsgContent ;
+		
+		String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+				"application/x-www-form-urlencoded;charset=UTF-8");
+		JSONParser parser = new JSONParser();
+		Object obj;
+		try 
+		{
+			obj = parser.parse(retJson); 
+			JSONObject object = (JSONObject) obj;
+			
+			if (object.get("Status").equals("Group Chat Msg Has Not Been Sent") )
+				return "Group Chat Msg Has Not Been Sent";
+			
+			else if(object.get("Status").equals("Group Chat Msg Has Been Sent") )
+				return "Group Chat Msg Has Been Sent";
+		} 
+		catch (ParseException e) { e.printStackTrace(); }
+		
+	 	return "Problem In Sending Group Chat Message" ; 
+	}
+	
+	
+	@POST
+	@Path("/CheckGroupChatMessages")
+	public Response CheckGroupChatMessages( @FormParam("UserEmail") String UserEmail )
+	{
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		Vector<String> MyMsg = GroupChat.Get_MyGroupChatMessages(UserEmail);
+		MyMap.put( "MyMsg" , MyMsg );
+		return Response.ok(new Viewable("/jsp/Messages/CheckMyGroupChatMessages.jsp" , MyMap ) ).build();
+	}
+	
+	@POST
+	@Path("/ReplyToGroupChat")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String ReplyToGroupChat( 
+			               		    @FormParam("UserEmail") String UserEmail ,
+			               		    @FormParam("GroupChatNumber") int GroupChatID , 
+			               		    @FormParam("MsgContent") String MsgContent
+                          		   )
+	{
+		System.out.println("Reply To Group Chat Msg .");
+		
+		String serviceUrl = Domain_Name + "/rest/ReplyToGroupChat";
+		String urlParameters = "UserEmail=" +  UserEmail   
+				             + "&GroupChatNumber=" + GroupChatID
+				             + "&MsgContent=" + MsgContent ;
+		
+		String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+				"application/x-www-form-urlencoded;charset=UTF-8");
+		JSONParser parser = new JSONParser();
+		Object obj;
+		try 
+		{
+			obj = parser.parse(retJson); 
+			JSONObject object = (JSONObject) obj;
+			
+			if (object.get("Status").equals("2") )
+				return "Reply Msg Has Been Sent To Group Chat";
+			
+			else if(object.get("Status").equals("1") )
+				return "Reply Msg Has Not Been Sent To Group Chat";
+		} 
+		catch (ParseException e) { e.printStackTrace(); }
+		
+	 	return "Problem In Replying To Group Chat Message" ; 
+	}
+	
+	@POST	
+	@Path("/CreatePage")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String CreatePage( 
+							  @FormParam("pname") String pname ,
+							  @FormParam("type") String type ,
+							  @FormParam("category") String category ,
+							  @FormParam("UserEmail") String UserEmail 
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/CreatePage";
+		String urlParameters = "pname=" +  pname + 
+				               "&type=" + type +
+				               "&category=" + category + 
+				               "&UserEmail=" + UserEmail;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Page Has Not Been Created Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 {
+         	  System.out.println("Here");
+        	  MyModel.Json_Result_Msg = "Page Name Has Not Been Entered";
+        	 }
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Page Type Has Not Been Entered";
+        else if ( MyModel.MyJsonObject.get("Status").equals("3") )
+        	 MyModel.Json_Result_Msg =  "Page Category Has Not Been Entered";
+        else if ( MyModel.MyJsonObject.get("Status").equals("4") )
+        	 MyModel.Json_Result_Msg = "Page UserEmail {Owner} Has Not Been Entered";
+        else if ( MyModel.MyJsonObject.get("Status").equals("5") )
+        	 MyModel.Json_Result_Msg = "Page With Same Name Has Been Created Before";
+        else if ( MyModel.MyJsonObject.get("Status").equals("6") )
+        	 MyModel.Json_Result_Msg = "Page Has Been Created Successfully";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+}
+
+
+	@POST	
+	@Path("/WritePost")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String WritePost( 
+							  @FormParam("UserEmail") String UserEmail ,
+							  @FormParam("PostPrivacy") String PostPrivacy ,
+							  @FormParam("PostContent") String PostContent , 
+							  @FormParam("Custom") String Custom ,
+							  @FormParam("PostFeeling") String PostFeeling ,
+							  @FormParam("PostFeelingDescription") String PostFeelingDescription ,
+							  @FormParam("FriendEmail") String FriendEmail
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/WritePost";
+		String urlParameters = "UserEmail=" +  UserEmail + 
+				               "&PostPrivacy=" + PostPrivacy +
+				               "&PostContent=" + PostContent + 
+				               "&Custom=" + Custom +
+				               "&PostFeeling=" + PostFeeling + 
+				               "&PostFeelingDescription=" + PostFeelingDescription +
+				               "&FriendEmail=" + FriendEmail ;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Post Has Not Been Created Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Post Privacy Not Selected.";
+        else if ( MyModel.MyJsonObject.get("Status").equals("3") )
+        	 MyModel.Json_Result_Msg =  "No Data In The Post";
+        else if ( MyModel.MyJsonObject.get("Status").equals("4") )
+        	 MyModel.Json_Result_Msg = "Custom Friends Are Not Specified.";        
+        else if ( MyModel.MyJsonObject.get("Status").equals("5") )
+       	 MyModel.Json_Result_Msg = "Post Feeling Description Not Inserted.";        
+        else if ( MyModel.MyJsonObject.get("Status").equals("6") )
+        	 MyModel.Json_Result_Msg = "Post Has Been Created Successfully";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+}
+
+	@POST
+	@Path("/ViewMyTimeLine")
+	public Response ViewMyTimeLine( @FormParam("UserEmail") String UserEmail )
+	{
+		Vector<String> MyFriends = UserEntity.Get_MyFriends( UserEmail );
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		Vector<String> MyTimeLine = UserEntity.Show_MyTimeLine( UserEmail , MyFriends );
+		MyMap.put( "MyTimeLine" , MyTimeLine );
+		return Response.ok(new Viewable("/jsp/MyTimeLine.jsp" , MyMap ) ).build();
+	}
+	
+	
+	@POST	
+	@Path("/SharePostID")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sharePostID( 
+							  @FormParam("UserEmail") String UserEmail ,				
+							  @FormParam("postid") String postid
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/SharePostID";
+		String urlParameters = "UserEmail=" +  UserEmail + 
+				               "&postid=" + postid ;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Post Has Not Been Liked Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Post ID Is Empty.";
+        else if ( MyModel.MyJsonObject.get("Status").equals("5") )
+       	     MyModel.Json_Result_Msg = "Post ID Was Not Found .";
+        else if ( MyModel.MyJsonObject.get("Status").equals("6") )
+      	     MyModel.Json_Result_Msg = "Post ID Liked Successfully .";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+  }
+
+	
+	@POST	
+	@Path("/LikePostID")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String LikePostID( 
+							  @FormParam("UserEmail") String UserEmail ,				
+							  @FormParam("PostID") String PostID
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/LikePostID";
+		String urlParameters = "UserEmail=" +  UserEmail + 
+				               "&PostID=" + PostID ;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Post Has Not Been Liked Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Post ID Is Empty.";
+        else if ( MyModel.MyJsonObject.get("Status").equals("5") )
+       	     MyModel.Json_Result_Msg = "Post ID Was Not Found .";
+        else if ( MyModel.MyJsonObject.get("Status").equals("6") )
+      	     MyModel.Json_Result_Msg = "Post ID Liked Successfully .";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+  }
+	
+	@POST
+	@Path("/ViewPagesToLike")
+	public Response ViewPagesToLike( @FormParam("UserEmail") String UserEmail )
+	{
+		Vector<String> MyFriends = UserEntity.Get_MyFriends( UserEmail );
+		//String UserEmail = User.getCurrentActiveUser().getEmail();
+		Map< String , Vector<String> > MyMap = new HashMap<String, Vector<String>>();
+		Vector<String> Me = new Vector<String>();
+		Me.add( UserEmail );
+		MyMap.put("MyEmail", Me );
+		
+		Vector<String> PagesILiked = UserEntity.Get_PagesILike(UserEmail);
+		Vector<String> PagesToLike = UserEntity.Get_PagesToLike( UserEmail , PagesILiked );
+		PagesILiked.clear();
+		MyMap.put( "PagesToLike" , PagesToLike );
+		return Response.ok(new Viewable("/jsp/Pages/PagesToLike.jsp" , MyMap ) ).build();
+	}
+
+	@POST	
+	@Path("/LikePage")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String LikePage( 
+							  @FormParam("UserEmail") String UserEmail ,				
+							  @FormParam("PagesToLike") String PagesToLike
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/PagesToLike";
+		String urlParameters = "UserEmail=" +  UserEmail + 
+				               "&PagesToLike=" + PagesToLike ;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Page Has Not Been Liked Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Page Name Is Empty.";
+        else if ( MyModel.MyJsonObject.get("Status").equals("3") )
+      	     MyModel.Json_Result_Msg = "Page Has Been Liked Successfully .";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+  }
 	
 }

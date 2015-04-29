@@ -7,6 +7,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.FCI.SWE.Controller.IPost;
+import com.FCI.SWE.Controller.Post;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -24,6 +26,9 @@ import com.google.appengine.api.datastore.Query;
  */
 
 public class User {
+	
+	private IPost MyPost ;
+	
 	private long id;
 	private String name;
 	private String email;
@@ -41,6 +46,12 @@ public class User {
 	 * @param password
 	 *            user provided password
 	 */
+	
+	public User()
+	{
+		
+	}
+	
 	private User(String name, String email, String password) {
 		this.name = name;
 		this.email = email;
@@ -162,5 +173,6 @@ public class User {
 	 return map ;
 	 
 	}
-
+    
+	
 }

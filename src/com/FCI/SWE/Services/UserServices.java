@@ -1,33 +1,26 @@
 package com.FCI.SWE.Services;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 import java.util.Vector;
 
+import javax.swing.text.DefaultEditorKit.CutAction;
 import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
-import org.glassfish.jersey.server.mvc.Viewable;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
+import com.FCI.SWE.Controller.AcceptNotify;
+import com.FCI.SWE.Controller.AddNotify;
+import com.FCI.SWE.Controller.MsgNotify;
+import com.FCI.SWE.Controller.NotificationInvoker;
+import com.FCI.SWE.Controller.NotificationNotify;
+import com.FCI.SWE.Models.MyModel;
 import com.FCI.SWE.Models.User;
 import com.FCI.SWE.ServicesModels.UserEntity;
+import com.google.appengine.labs.repackaged.org.json.JSONException;
 
 /**
  * This class contains REST services, also contains action function for web
@@ -42,6 +35,13 @@ import com.FCI.SWE.ServicesModels.UserEntity;
 @Produces(MediaType.TEXT_PLAIN)
 public class UserServices {
 	
+	private NotificationNotify Notify = new NotificationNotify();
+	private static NotificationInvoker Invoke = new NotificationInvoker();
+	private static AddNotify addN ;
+	private static AcceptNotify acceptN ;
+	
+	private static Msg_Subject MyMsg_Subject ;
+	private static Vector<Msg_Observer> MyMsg_Observers;
 	
 	/*@GET
 	@Path("/index")
@@ -49,8 +49,7 @@ public class UserServices {
 		return Response.ok(new Viewable("/jsp/entryPoint")).build();
 	}*/
 
-
-		/**
+	/**
 	 * Registration Rest service, this service will be called to make
 	 * registration. This function will store user data in data store
 	 * 
@@ -64,8 +63,12 @@ public class UserServices {
 	 */
 	@POST
 	@Path("/RegistrationService")
-	public String registrationService(@FormParam("uname") String uname,
-			@FormParam("email") String email, @FormParam("password") String pass) {
+	public String registrationService(
+			                          @FormParam("uname") String uname,
+			                          @FormParam("email") String email, 
+			                          @FormParam("password") String pass
+			                          ) 
+	{
 		UserEntity user = new UserEntity(uname, email, pass);
 		user.saveUser();
 		JSONObject object = new JSONObject();
@@ -109,37 +112,25 @@ public class UserServices {
 	 * @param FriendEamil the friend email
 	 * @return <code>String</code> represents status or a word about sending process
 	 */
+	@SuppressWarnings("unchecked")
 	@POST
 	@Path("/SendFriendRequest")
 	public String SendFriendRequest( @FormParam("UserEmail") String UserEmail ,
 						             @FormParam("FriendEamil") String FriendEmailToAdd 
 						           ) 
-	{
-		//System.out.println("User Name : " + UserName );
-		//System.out.println("User ID : " + UserID );
-		//System.out.println("User Password : " + UserPassword );
-		/*if (user == null) 
-		{
-			object.put("Status", "Who Are You !!!! Failed");
-		} 
-		else 
-		{*/
-			//System.out.println("Herrrrrrrrrrrrrre.");
-		//}
-			
+	{	
 		JSONObject object = new JSONObject();
 		
 		if( UserEmail.compareTo( FriendEmailToAdd ) == 0 )
-		{
-		  object.put("Status", "You Can't Add Yourself" );
-		}
+		   object.put("Status", "You Can't Add Yourself" );
+		
 		else if( !UserEntity.Check_User_Friend( FriendEmailToAdd )  )
-		{
-		  object.put("Status", "Friend Email Does Not Exist" );	
-		}
+			    object.put("Status", "Friend Email Does Not Exist" );	
 		else 
 		{
 		  UserEntity.Send_Friend_Request(UserEmail, FriendEmailToAdd);
+		  addN = new AddNotify(Notify);
+		  Invoke.placeNotifications(addN, UserEmail,FriendEmailToAdd);
 		  object.put("Status", "OK");
 		}
 		
@@ -167,6 +158,8 @@ public class UserServices {
 		if( UserEntity.Accept_Add_Friend_Request( UserEmail , FriendEmail ) ) 
 		   {
 			System.out.println("Add Function OK.");
+			acceptN = new AcceptNotify(Notify);
+			Invoke.placeNotifications(acceptN, FriendEmail , UserEmail);
 			object.put("Status", "OK");
 		   }
 		else
@@ -204,4 +197,215 @@ public class UserServices {
 		}
 		return object.toString();
 	}
+	
+	/**
+	 * This Method is used to make user able to send a single message to anyone of his friends 
+	 * @param UserEmail    Email Of User Who Sends The Message  
+	 * @param FriendEmail  FriendEmail To Send The Message To 
+	 * @param MsgContent   Message Content To Send And Be Retrieved 
+	 * @return <Code>String</Code>
+	 */
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/SendMsg")
+	public String SendMsg( 
+            			   @FormParam("UserEmail") String UserEmail ,
+            			   @FormParam("FriendEmail") String FriendEmail , 
+            			   @FormParam("MsgContent") String MsgContent
+						 )
+	{
+		JSONObject object = new JSONObject();
+		if( UserEmail == null || FriendEmail == null )
+		{
+		 object.put( "Status" , "Msg Has Not Been Sent" );	
+		}
+		else   
+		{
+		  
+		  MyMsg_Subject = new GroupChat();
+		  String [] MyUsersNames = FriendEmail.split(",");
+		  MyMsg_Observers = new Vector<Msg_Observer>();
+		  for( int i=0;i<MyUsersNames.length; i++)
+		  {
+			MyMsg_Observers.add( new Msg_Observer( MyMsg_Subject , MyUsersNames[i] ) );
+			MyMsg_Subject.Add_Observer( MyMsg_Observers.elementAt(i) );
+			MyMsg_Subject.Set_Msg( MsgContent );
+		    MyMsg_Subject.Notify_Observers();
+		  }
+		  
+		  MsgNotify msgN = new MsgNotify(Notify);
+		  Invoke.placeNotifications(msgN, UserEmail,FriendEmail);
+		 
+          UserEntity.Send_Message( UserEmail , FriendEmail , MsgContent );
+          object.put("Status", "Msg Has Been Sent");
+		}
+		return object.toString();	
+	}
+	
+	/**
+	 * This Method is used to make user able to send a single message to anyone of his friends 
+	 * @param UserEmail    Email Of User Who Sends The Message  
+	 * @param FriendEmail  FriendEmail To Send The Message To 
+	 * @param MsgContent   Message Content To Send And Be Retrieved 
+	 * @return <Code>String</Code>
+	 */
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/SendGroupChat")
+	public String SendGroupChat( 
+            			   @FormParam("UserEmail") String UserEmail ,
+            			   @FormParam("FriendsEmail") String FriendsEmail , 
+            			   @FormParam("MsgContent") String MsgContent
+						 )
+	{
+		System.out.println("Msg Group Chat Service.");
+		JSONObject object = new JSONObject();
+		if( UserEmail == null || FriendsEmail == null )
+		{
+		 object.put( "Status" , " Group Chat Msg Has Not Been Sent" );	
+		}
+		else   
+		{
+		 String DateTime = MyModel.Get_Current_DateTime();
+			
+		 GroupChat GC = new GroupChat( FriendsEmail, DateTime, MsgContent, UserEmail , -1 );
+		 GC.Save_Group_Chat_Update(); 
+		 
+         //UserEntity.AddNog( UserEmail , "U Send Messge To F "  , Fried , 1 )
+		 object.put("Status" , "Group Chat Msg Has Been Sent");
+		 MsgNotify msgN = new MsgNotify(Notify);
+		 Invoke.placeNotifications(msgN, UserEmail,FriendsEmail);
+	  }
+		return object.toString();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/ReplyToGroupChat")
+	public String ReplyToGroupChat( 
+								   @FormParam("UserEmail") String UserEmail ,
+								   @FormParam("GroupChatNumber") int GroupChatID , 
+								   @FormParam("MsgContent") String MsgContent
+  		   						  )
+	{
+		System.out.println("ReplyToGroupChat Services.");
+		System.out.println( "With Group Number : " + GroupChatID );
+		JSONObject object = new JSONObject();
+		if( UserEmail == null || GroupChatID <1 )
+		   object.put( "Status" , "1" );	
+		
+		else   
+		{		
+		 GroupChat.Reply_To_Group_Chat( UserEmail , GroupChatID , MsgContent );
+		 object.put("Status" , "2");
+		 //MsgNotify msgN = new MsgNotify(Notify);
+		 //Invoke.placeNotifications(msgN, UserEmail,FriendEmail);
+		}
+		return object.toString();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/CreatePage")
+	public String CreatePage( 
+							  @FormParam("pname") String pname ,
+			  				  @FormParam("type") String type ,
+			  				  @FormParam("category") String category ,
+			  				  @FormParam("UserEmail") String UserEmail 
+   						    ) throws JSONException
+	{
+		if( pname.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		else if( type.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "2" );
+		else if( category.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "3" );
+		else if( UserEmail.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "4" );
+		else   
+		{		
+		  if( UserEntity.Create_page(UserEmail, pname, type, category) )
+			  MyModel.MyJsonObject.put( "Status" , "6" );
+		  else  MyModel.MyJsonObject.put( "Status" , "5" );
+		}
+		
+		return MyModel.MyJsonObject.toString();
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/WritePost")
+	public String WritePost( 
+							  @FormParam("UserEmail") String UserEmail ,
+			  				  @FormParam("PostPrivacy") String PostPrivacy ,
+			  				  @FormParam("PostContent") String PostContent , 
+			  				  @FormParam("Custom") String Custom ,
+							  @FormParam("PostFeeling") String PostFeeling ,
+							  @FormParam("PostFeelingDescription") String PostFeelingDescription ,
+							  @FormParam("FriendEmail") String FriendEmail 
+   						    ) throws JSONException
+	{
+		if( UserEmail.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		else if( PostPrivacy.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "2" );
+		else if( PostContent.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "3" );
+		else if( Custom.compareTo("") == 0 && PostPrivacy.compareTo("Custom") == 0)
+			MyModel.MyJsonObject.put( "Status" , "4" );
+		else if( PostFeeling.compareTo("") != 0 && PostFeelingDescription.compareTo("") == 0)
+			MyModel.MyJsonObject.put( "Status" , "5" );
+		else   
+		{		
+		  if( UserEntity.Create_Post(UserEmail, PostPrivacy, PostContent, Custom , PostFeeling , PostFeelingDescription , FriendEmail ) )
+			  MyModel.MyJsonObject.put( "Status" , "6" );
+		}
+		return MyModel.MyJsonObject.toString();
+	}
+
+
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/LikePostID")
+	public String LikePostID( 
+			  				  @FormParam("UserEmail") String UserEmail ,				
+			  				  @FormParam("PostID") String PostID
+   						    ) throws JSONException
+	{
+		if( UserEmail.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		else if( PostID.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "2" );
+		else   
+		{		
+		  if( UserEntity.LikePostID( UserEmail , PostID ) )
+			  MyModel.MyJsonObject.put( "Status" , "6" );
+		  else MyModel.MyJsonObject.put( "Status" , "5" );
+		}
+		return MyModel.MyJsonObject.toString();
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/PagesToLike")
+	public String PagesToLike( 
+			  				   @FormParam("UserEmail") String UserEmail ,				
+			  				   @FormParam("PagesToLike") String PagesToLike
+   						     ) throws JSONException
+	{
+		if( UserEmail.compareTo("") == 0 ) 
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		else if( PagesToLike.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "2" );
+		else   
+		{		
+		  if( UserEntity.LikePage( UserEmail , PagesToLike ) )
+			  MyModel.MyJsonObject.put( "Status" , "3" );
+		  else MyModel.MyJsonObject.put( "Status" , "4" );
+		}
+		return MyModel.MyJsonObject.toString();
+	}
+	
 }

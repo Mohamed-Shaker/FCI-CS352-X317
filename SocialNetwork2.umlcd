@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_yjfy8NqpEeSKGvMnzPuPsw">
+  <modelElement href="SocialNetwork2.uml#_0RLcwNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1OpKkNqpEeSKGvMnzPuPsw" targetItem="_1OwfUNqpEeSKGvMnzPuPsw" sourceItem="_1On8cNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_1RQZsNqpEeSKGvMnzPuPsw" sourceAnchor="189.0,0.0" targetAnchor="0.0,126.0" target="_1Rcm8NqpEeSKGvMnzPuPsw" source="_1Rcm8NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yahkNqpEeSKGvMnzPuPsw"/>
+    <bendpoints xmi:id="_1f-yMNqpEeSKGvMnzPuPsw" sourceY="-95" targetX="189" targetY="-221"/>
+    <bendpoints xmi:id="_1f_ZQNqpEeSKGvMnzPuPsw" sourceX="-350" sourceY="-95" targetX="-161" targetY="-221"/>
+    <bendpoints xmi:id="_1f_ZQdqpEeSKGvMnzPuPsw" sourceX="-350" sourceY="126" targetX="-161"/>
+    <stereotypes xmi:id="_1RZjodqpEeSKGvMnzPuPsw" name="Reference">
+      <modelElement href="SocialNetwork2.uml#_0yc90NqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_1RYVgNqpEeSKGvMnzPuPsw" text="">
+      <visualProperties xmi:id="_1gAnYNqpEeSKGvMnzPuPsw" position="290.5,-9.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_1RY8kNqpEeSKGvMnzPuPsw" aggregationKind="NONE" name="">
+      <modelElement href="SocialNetwork2.uml#_0yahkdqpEeSKGvMnzPuPsw"/>
+      <visualProperties xmi:id="_1gAAUNqpEeSKGvMnzPuPsw" position="-20.0,-50.0"/>
+      <visibility xmi:id="_1RaxwdqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1RaxwNqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_1RZjoNqpEeSKGvMnzPuPsw" aggregationKind="NONE" name="currentActiveUser" navigable="true">
+      <modelElement href="SocialNetwork2.uml#_0wbkkNqpEeSKGvMnzPuPsw"/>
+      <visualProperties xmi:id="_1gBOcNqpEeSKGvMnzPuPsw" position="-114.00000000000006,2.9999999999999147"/>
+      <stereotypes xmi:id="_hTPRcNq8EeS-b7zAxl-89w" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wcysNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1RbY0dqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1RbY0NqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RRAwdqpEeSKGvMnzPuPsw" targetItem="_1Rcm8NqpEeSKGvMnzPuPsw" sourceItem="_1RRAwNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RS18NqpEeSKGvMnzPuPsw" targetItem="_1RdOCtqpEeSKGvMnzPuPsw" sourceItem="_1RSO4NqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RTdAdqpEeSKGvMnzPuPsw" targetItem="_1RdOFdqpEeSKGvMnzPuPsw" sourceItem="_1RTdANqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RUEEdqpEeSKGvMnzPuPsw" targetItem="_1RdOGdqpEeSKGvMnzPuPsw" sourceItem="_1RUEENqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RUrIdqpEeSKGvMnzPuPsw" targetItem="_1RdOHdqpEeSKGvMnzPuPsw" sourceItem="_1RUrINqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RVSMdqpEeSKGvMnzPuPsw" targetItem="_1RdOIdqpEeSKGvMnzPuPsw" sourceItem="_1RVSMNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RV5QdqpEeSKGvMnzPuPsw" targetItem="_1RdOI9qpEeSKGvMnzPuPsw" sourceItem="_1RV5QNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1RWgUdqpEeSKGvMnzPuPsw" targetItem="_1RdOKdqpEeSKGvMnzPuPsw" sourceItem="_1RWgUNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SSUcNqpEeSKGvMnzPuPsw" targetItem="_1SehsNqpEeSKGvMnzPuPsw" sourceItem="_1SRtYNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SS7gdqpEeSKGvMnzPuPsw" targetItem="_1SfIxdqpEeSKGvMnzPuPsw" sourceItem="_1SS7gNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1STikdqpEeSKGvMnzPuPsw" targetItem="_1SfI0NqpEeSKGvMnzPuPsw" sourceItem="_1STikNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SUJodqpEeSKGvMnzPuPsw" targetItem="_1SfI1NqpEeSKGvMnzPuPsw" sourceItem="_1SUJoNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SUwsdqpEeSKGvMnzPuPsw" targetItem="_1SfI2NqpEeSKGvMnzPuPsw" sourceItem="_1SUwsNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SVXwdqpEeSKGvMnzPuPsw" targetItem="_1SfI3NqpEeSKGvMnzPuPsw" sourceItem="_1SVXwNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SV-0dqpEeSKGvMnzPuPsw" targetItem="_1SfI5NqpEeSKGvMnzPuPsw" sourceItem="_1SV-0NqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SXM8NqpEeSKGvMnzPuPsw" targetItem="_1SfI6NqpEeSKGvMnzPuPsw" sourceItem="_1SWl4NqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SYbEdqpEeSKGvMnzPuPsw" targetItem="_1SfI7tqpEeSKGvMnzPuPsw" sourceItem="_1SYbENqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1SZpMdqpEeSKGvMnzPuPsw" targetItem="_1SfI9tqpEeSKGvMnzPuPsw" sourceItem="_1SZpMNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1Sa3UNqpEeSKGvMnzPuPsw" targetItem="_1SfI_tqpEeSKGvMnzPuPsw" sourceItem="_1SaQQNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1S2VINqpEeSKGvMnzPuPsw" targetItem="_1S70sNqpEeSKGvMnzPuPsw" sourceItem="_1S1uENqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1S28MdqpEeSKGvMnzPuPsw" targetItem="_1S70xdqpEeSKGvMnzPuPsw" sourceItem="_1S28MNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1S4KUNqpEeSKGvMnzPuPsw" targetItem="_1S70ydqpEeSKGvMnzPuPsw" sourceItem="_1S3jQNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1S4KUtqpEeSKGvMnzPuPsw" targetItem="_1S70zdqpEeSKGvMnzPuPsw" sourceItem="_1S4KUdqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1S4xYdqpEeSKGvMnzPuPsw" targetItem="_1S700dqpEeSKGvMnzPuPsw" sourceItem="_1S4xYNqpEeSKGvMnzPuPsw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_1S5_gNqpEeSKGvMnzPuPsw" targetItem="_1S701dqpEeSKGvMnzPuPsw" sourceItem="_1S5YcNqpEeSKGvMnzPuPsw"/>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1On8cNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1OpKkNqpEeSKGvMnzPuPsw" text="This is connection class which defines connection attributes and properties &#xD;&#xA;that could be used to make a connection to a services .&#xD;&#xA; *&#xD;&#xA;@author Mohamed Samir&#xD;&#xA;@version 1.0&#xD;&#xA;@since 2014-02-12" item="_1OwfUNqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0xy2gNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RRAwNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RRAwdqpEeSKGvMnzPuPsw" text="This class contains User Attributes as name , id , email , password that can be used to describe &#xD;&#xA;and identify current user .&#xD;&#xA;&#xD;&#xA;@author Mohamed Samir&#xD;&#xA;@version 1.0&#xD;&#xA;@since 2014-02-12&#xD;&#xA; *" item="_1Rcm8NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x6yUtqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RSO4NqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RS18NqpEeSKGvMnzPuPsw" text="Constructor accepts user data&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param name&#xD;&#xA;&#x9; *            user name&#xD;&#xA;&#x9; * @param email&#xD;&#xA;&#x9; *            user email&#xD;&#xA;&#x9; * @param password&#xD;&#xA;&#x9; *            user provided password" item="_1RdOCtqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x7ZYNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RTdANqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RTdAdqpEeSKGvMnzPuPsw" text="This method is used to set the id for the user. &#xD;&#xA;&#x9; * @param id representing id of the user ." item="_1RdOFdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x8AcNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RUEENqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RUEEdqpEeSKGvMnzPuPsw" text="This method is used to get the name of the user . &#xD;&#xA;&#x9; * @return a &lt;code>String&lt;/code> representing User Name ." item="_1RdOGdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x8AcdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RUrINqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RUrIdqpEeSKGvMnzPuPsw" text="This method is used to get the password of the user . &#xD;&#xA;&#x9; * @return a &lt;code>String&lt;/code> representing User Password ." item="_1RdOHdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x8ActqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RVSMNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RVSMdqpEeSKGvMnzPuPsw" text="This method is used to set Current Active User In The Website to null or make user &#xD;&#xA;&#x9; * existence in the system no more case logout ." item="_1RdOIdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x8Ac9qpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RV5QNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RV5QdqpEeSKGvMnzPuPsw" text="&#xD;&#xA;&#x9; * This static method will form UserEntity class using json format contains&#xD;&#xA;&#x9; * user data&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param json&#xD;&#xA;&#x9; *            String in json format contains user data&#xD;&#xA;&#x9; * @return Constructed user entity" item="_1RdOI9qpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x8ngNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1RWgUNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1RWgUdqpEeSKGvMnzPuPsw" text="This Method is used to get user friend requests which sent to him &#xD;&#xA;&#x9; * @param UserEmail The Current user in the system .&#xD;&#xA;&#x9; * @return &lt;Code>Map&lt;/Code>" item="_1RdOKdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0x8ngdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SRtYNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SSUcNqpEeSKGvMnzPuPsw" text="&lt;h1>User Entity class&lt;/h1>&#xD;&#xA;&lt;p>&#xD;&#xA;This class will act as a model for user, it will holds user data&#xD;&#xA;&lt;/p>&#xD;&#xA; *&#xD;&#xA;@author Mohamed Samir&#xD;&#xA;@version 1.0&#xD;&#xA;@since 2014-02-12" item="_1SehsNqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yFKYdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SS7gNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SS7gdqpEeSKGvMnzPuPsw" text="Constructor accepts user data&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param name&#xD;&#xA;&#x9; *            user name&#xD;&#xA;&#x9; * @param email&#xD;&#xA;&#x9; *            user email&#xD;&#xA;&#x9; * @param password&#xD;&#xA;&#x9; *            user provided password" item="_1SfIxdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yFKYtqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1STikNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1STikdqpEeSKGvMnzPuPsw" text="This method is used to set the id for the user. &#xD;&#xA;&#x9; * @param id representing id of the user ." item="_1SfI0NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yFxcNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SUJoNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SUJodqpEeSKGvMnzPuPsw" text="This method is used to get the name of the user . &#xD;&#xA;&#x9; * @return a &lt;code>String&lt;/code> representing User Name ." item="_1SfI1NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yFxcdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SUwsNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SUwsdqpEeSKGvMnzPuPsw" text="This method is used to get the password of the user . &#xD;&#xA;&#x9; * @return a &lt;code>String&lt;/code> representing User Password ." item="_1SfI2NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yGYgNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SVXwNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SVXwdqpEeSKGvMnzPuPsw" text="&#xD;&#xA;&#x9; * This static method will form UserEntity class using user name and&#xD;&#xA;&#x9; * password This method will serach for user in datastore&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param name&#xD;&#xA;&#x9; *            user name&#xD;&#xA;&#x9; * @param pass&#xD;&#xA;&#x9; *            user password&#xD;&#xA;&#x9; * @return Constructed user entity" item="_1SfI3NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yGYgdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SV-0NqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SV-0dqpEeSKGvMnzPuPsw" text="This method will be used to save user object in datastore&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return boolean if user is saved correctly or not" item="_1SfI5NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yGYgtqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SWl4NqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SXM8NqpEeSKGvMnzPuPsw" text=" Check Friend If Or Not Has Registered In The System . &#xD;&#xA;&#x9; *  @param FriendEmail Friend Email To Check For Existence . &#xD;&#xA;&#x9; *  @return &lt;Code>FriendEmail&lt;/Code>" item="_1SfI6NqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yGYg9qpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SYbENqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SYbEdqpEeSKGvMnzPuPsw" text="&#xD;&#xA;&#x9; * This static method will save the send friend request on the datastore .&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param UserEmail the user email who sends friend request&#xD;&#xA;&#x9; * @param FriendEmail the friend email who in the future maybe accept that request .&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @return &lt;code>Boolean&lt;/code> which returns true if the sending process is successful ." item="_1SfI7tqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yG_kNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SZpMNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1SZpMdqpEeSKGvMnzPuPsw" text="&#xD;&#xA;&#x9; * This static method will accept friend request which is send to user when he/she open his/her home page .&#xD;&#xA;&#x9; * @param UserEmail the user email who will accept friend request .&#xD;&#xA;&#x9; * @param FriendEmail who will be notified about acceptance of send request.&#xD;&#xA;&#x9; * @return &lt;code>Boolean&lt;/code> which returns true if the accept friend request process is successful ." item="_1SfI9tqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yG_kdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1SaQQNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1Sa3UNqpEeSKGvMnzPuPsw" text="This Method is used to get user friend requests which sent to him &#xD;&#xA;&#x9; * @param UserEmail The Current user in the system .&#xD;&#xA;&#x9; * @return &lt;Code>Map&lt;/Code>" item="_1SfI_tqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yG_ktqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1S1uENqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1S2VINqpEeSKGvMnzPuPsw" text="&#xD;&#xA;This class handles every thing which is related to any process &#xD;&#xA;needed to be done with the social network groups as creating , updating . &#xD;&#xA;@author Eng.Mohammed Samir&#xD;&#xA; *" item="_1S70sNqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yD8QtqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1S28MNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1S28MdqpEeSKGvMnzPuPsw" text="This method is used to get the name of the group. &#xD;&#xA;&#x9; * @return a &lt;code>String&lt;/code> representing Group Name ." item="_1S70xdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yEjUNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1S3jQNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1S4KUNqpEeSKGvMnzPuPsw" text="This method is used to get the Description of the group. &#xD;&#xA;&#x9; * @return a &lt;code>String&lt;/code> representing Group Description ." item="_1S70ydqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yEjUdqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1S4KUdqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1S4KUtqpEeSKGvMnzPuPsw" text="This method is used to set the name for the group. &#xD;&#xA;&#x9; * @param name representing new name of the group ." item="_1S70zdqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yEjUtqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1S4xYNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1S4xYdqpEeSKGvMnzPuPsw" text="This method is used to set the description for the group. &#xD;&#xA;&#x9; * @param desc representing new description of the group ." item="_1S700dqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yEjU9qpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_1S5YcNqpEeSKGvMnzPuPsw" sourceConnectionVisual="_1S5_gNqpEeSKGvMnzPuPsw" text="This method is used to save a new group to datastore. &#xD;&#xA;&#x9; * @return &lt;code>Boolean&lt;/code> which returns true if the saving process if successful  ." item="_1S701dqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0yFKYNqpEeSKGvMnzPuPsw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1OwfUNqpEeSKGvMnzPuPsw" comments="_1On8cNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1OpKkNqpEeSKGvMnzPuPsw" name="Connection">
+    <modelElement href="SocialNetwork2.uml#_0j0r8NqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1OwfUdqpEeSKGvMnzPuPsw" position="-665.0,-122.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_1OwfUtqpEeSKGvMnzPuPsw" label="+"/>
+    <operations xmi:id="_1OwfU9qpEeSKGvMnzPuPsw" name="connect" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0j-c8NqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1OwfVNqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1OwfVdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0kA5MNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1OwfVtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1OwfV9qpEeSKGvMnzPuPsw" name="serviceUrl">
+        <modelElement href="SocialNetwork2.uml#_0j_EANqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1OwfWNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1OwfWdqpEeSKGvMnzPuPsw" name="urlParameters">
+        <modelElement href="SocialNetwork2.uml#_0j_EAdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1OwfWtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1OwfW9qpEeSKGvMnzPuPsw" name="methodType">
+        <modelElement href="SocialNetwork2.uml#_0j_EAtqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1OwfXNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1OwfXdqpEeSKGvMnzPuPsw" name="contentType">
+        <modelElement href="SocialNetwork2.uml#_0j_EA9qpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1OwfXtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1Q6bcNqpEeSKGvMnzPuPsw" name="UserController">
+    <modelElement href="SocialNetwork2.uml#_0nGpcNqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1Q6bcdqpEeSKGvMnzPuPsw" position="-665.0,-488.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_1Q6bctqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+      <modelElement href="SocialNetwork2.uml#_0nJFsNqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_1Q6bc9qpEeSKGvMnzPuPsw" name="Annotations">
+      <modelElement href="SocialNetwork2.uml#_0oTjUNqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <visibility xmi:id="_1Q6bdNqpEeSKGvMnzPuPsw" label="+"/>
+    <attributes xmi:id="_1Q7CgNqpEeSKGvMnzPuPsw" defaultValue="&quot;http://1-dot-mhgbx317.appspot.com&quot;" name="Domain_Name">
+      <modelElement href="SocialNetwork2.uml#_0wiSQNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1Q7CgdqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1Q7CgtqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1Q7Cg9qpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_1Q7ChNqpEeSKGvMnzPuPsw" name="LogOUt">
+      <modelElement href="SocialNetwork2.uml#_0nLh8NqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7ChdqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0nN-MNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7ChtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7Ch9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0v9DcNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CiNqpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1Q7CidqpEeSKGvMnzPuPsw" name="signUp">
+      <modelElement href="SocialNetwork2.uml#_0nPzYNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7CitqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0nRokNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7Ci9qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7CjNqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0v-RkNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CjdqpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1Q7CjtqpEeSKGvMnzPuPsw" name="index">
+      <modelElement href="SocialNetwork2.uml#_0nTdwNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7Cj9qpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0nVS8NqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7CkNqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7CkdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0v-4oNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CktqpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1Q7Ck9qpEeSKGvMnzPuPsw" name="login">
+      <modelElement href="SocialNetwork2.uml#_0nXIINqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7ClNqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0nY9UNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7CldqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7CltqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0v_fsNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7Cl9qpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1Q7CmNqpEeSKGvMnzPuPsw" name="response">
+      <modelElement href="SocialNetwork2.uml#_0ndOwNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7CmdqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0nlxoNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7CmtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7Cm9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0nec4NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CnNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1Q7CndqpEeSKGvMnzPuPsw" name="uname">
+        <modelElement href="SocialNetwork2.uml#_0ndOwdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CntqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Q7Cn9qpEeSKGvMnzPuPsw" name="email">
+        <modelElement href="SocialNetwork2.uml#_0ndOwtqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CoNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Q7CodqpEeSKGvMnzPuPsw" name="pass">
+        <modelElement href="SocialNetwork2.uml#_0nd10NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CotqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1Q7Co9qpEeSKGvMnzPuPsw" name="home">
+      <modelElement href="SocialNetwork2.uml#_0nr4QNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7CpNqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0nyl8NqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7CpdqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7CptqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0wBU4NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7Cp9qpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1Q7CqNqpEeSKGvMnzPuPsw" name="UserName">
+        <modelElement href="SocialNetwork2.uml#_0nr4QdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CqdqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Q7CqtqpEeSKGvMnzPuPsw" name="UserPassword">
+        <modelElement href="SocialNetwork2.uml#_0nsfUNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7Cq9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1Q7CrNqpEeSKGvMnzPuPsw" name="SendFriendRequest">
+      <modelElement href="SocialNetwork2.uml#_0n4skNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7CrdqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0oABUNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7CrtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7Cr9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0n56sNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CsNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1Q7CsdqpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0n4skdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CstqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Q7Cs9qpEeSKGvMnzPuPsw" name="FriendEmailToAdd">
+        <modelElement href="SocialNetwork2.uml#_0n5ToNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CtNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1Q7CtdqpEeSKGvMnzPuPsw" name="CheckFriendRequests">
+      <modelElement href="SocialNetwork2.uml#_0oDrsNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7CttqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0oFg4NqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7Ct9qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7CuNqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0wCjANqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CudqpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1Q7CutqpEeSKGvMnzPuPsw" name="AcceptFriendRequest">
+      <modelElement href="SocialNetwork2.uml#_0oJyUNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Q7Cu9qpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0oP48NqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Q7CvNqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Q7CvdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0oLAcNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CvtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1Q7Cv9qpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0oJyUdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CwNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Q7CwdqpEeSKGvMnzPuPsw" name="FriendEmailToAdd">
+        <modelElement href="SocialNetwork2.uml#_0oJyUtqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Q7CwtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1SehsNqpEeSKGvMnzPuPsw" comments="_1SRtYNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SSUcNqpEeSKGvMnzPuPsw" name="UserEntity">
+    <modelElement href="SocialNetwork2.uml#_0pCjINqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1SehsdqpEeSKGvMnzPuPsw" position="-1182.0,-492.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_1SehstqpEeSKGvMnzPuPsw" label="+"/>
+    <attributes xmi:id="_1Sehs9qpEeSKGvMnzPuPsw" name="name">
+      <modelElement href="SocialNetwork2.uml#_0wwUsNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SehtNqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wxi0NqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SehtdqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1SehttqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1Seht9qpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1SehuNqpEeSKGvMnzPuPsw" name="email">
+      <modelElement href="SocialNetwork2.uml#_0wxi0dqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SehudqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1SehutqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1Sehu9qpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1SehvNqpEeSKGvMnzPuPsw" name="password">
+      <modelElement href="SocialNetwork2.uml#_0wyJ4NqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SehvdqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wzYANqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SehvtqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1Sehv9qpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1SfIwNqpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1SfIwdqpEeSKGvMnzPuPsw" name="id">
+      <modelElement href="SocialNetwork2.uml#_0wz_ENqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfIwtqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1SfIw9qpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1SfIxNqpEeSKGvMnzPuPsw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_1SfIxdqpEeSKGvMnzPuPsw" comments="_1SS7gNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SS7gdqpEeSKGvMnzPuPsw" name="UserEntity">
+      <modelElement href="SocialNetwork2.uml#_0pJ34NqpEeSKGvMnzPuPsw"/>
+      <keywords xmi:id="_1SfIxtqpEeSKGvMnzPuPsw" keyword="create"/>
+      <visibility xmi:id="_1SfIx9qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfIyNqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pLGAtqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfIydqpEeSKGvMnzPuPsw" name="UserEntity">
+          <modelElement href="SocialNetwork2.uml#_0pCjINqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SfIytqpEeSKGvMnzPuPsw" name="name">
+        <modelElement href="SocialNetwork2.uml#_0pKe8NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfIy9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SfIzNqpEeSKGvMnzPuPsw" name="email">
+        <modelElement href="SocialNetwork2.uml#_0pKe8dqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfIzdqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SfIztqpEeSKGvMnzPuPsw" name="password">
+        <modelElement href="SocialNetwork2.uml#_0pKe8tqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfIz9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SfI0NqpEeSKGvMnzPuPsw" comments="_1STikNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1STikdqpEeSKGvMnzPuPsw" name="setId">
+      <modelElement href="SocialNetwork2.uml#_0pNiQNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI0dqpEeSKGvMnzPuPsw" label="-"/>
+      <parameters xmi:id="_1SfI0tqpEeSKGvMnzPuPsw" name="id">
+        <modelElement href="SocialNetwork2.uml#_0pNiQdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI09qpEeSKGvMnzPuPsw" name="long">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SfI1NqpEeSKGvMnzPuPsw" comments="_1SUJoNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SUJodqpEeSKGvMnzPuPsw" name="getName">
+      <modelElement href="SocialNetwork2.uml#_0pOwYNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI1dqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI1tqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pPXcNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI19qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1SfI2NqpEeSKGvMnzPuPsw" comments="_1SUwsNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SUwsdqpEeSKGvMnzPuPsw" name="getPass">
+      <modelElement href="SocialNetwork2.uml#_0pQlkNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI2dqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI2tqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pRMoNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI29qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1SfI3NqpEeSKGvMnzPuPsw" comments="_1SVXwNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SVXwdqpEeSKGvMnzPuPsw" name="getUser" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0pTB0NqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI3dqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI3tqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0vg-kNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI39qpEeSKGvMnzPuPsw" name="UserEntity">
+          <modelElement href="SocialNetwork2.uml#_0pCjINqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SfI4NqpEeSKGvMnzPuPsw" name="name">
+        <modelElement href="SocialNetwork2.uml#_0pTo4NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI4dqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SfI4tqpEeSKGvMnzPuPsw" name="pass">
+        <modelElement href="SocialNetwork2.uml#_0pTo4dqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI49qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SfI5NqpEeSKGvMnzPuPsw" comments="_1SV-0NqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SV-0dqpEeSKGvMnzPuPsw" name="saveUser">
+      <modelElement href="SocialNetwork2.uml#_0pVeENqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI5dqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI5tqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pWsMNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI59qpEeSKGvMnzPuPsw" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1SfI6NqpEeSKGvMnzPuPsw" comments="_1SWl4NqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SXM8NqpEeSKGvMnzPuPsw" name="Check_User_Friend" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0pX6UNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI6dqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI6tqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pZIcNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI69qpEeSKGvMnzPuPsw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SfI7NqpEeSKGvMnzPuPsw" name="FriendEmail">
+        <modelElement href="SocialNetwork2.uml#_0pYhYNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI7dqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SfI7tqpEeSKGvMnzPuPsw" comments="_1SYbENqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SYbEdqpEeSKGvMnzPuPsw" name="Send_Friend_Request" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0pa9oNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI79qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI8NqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pcLwNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI8dqpEeSKGvMnzPuPsw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SfI8tqpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0pa9odqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI89qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SfI9NqpEeSKGvMnzPuPsw" name="FriendEmail">
+        <modelElement href="SocialNetwork2.uml#_0pbksNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI9dqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SfI9tqpEeSKGvMnzPuPsw" comments="_1SZpMNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1SZpMdqpEeSKGvMnzPuPsw" name="Accept_Add_Friend_Request" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0peoANqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1SfI99qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfI-NqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0pf2INqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI-dqpEeSKGvMnzPuPsw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SfI-tqpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0pfPENqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI-9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SfI_NqpEeSKGvMnzPuPsw" name="FriendEmail">
+        <modelElement href="SocialNetwork2.uml#_0pfPEdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfI_dqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SfI_tqpEeSKGvMnzPuPsw" comments="_1SaQQNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1Sa3UNqpEeSKGvMnzPuPsw" name="get_Friend_Requests" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0piSYNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SfI_9qpEeSKGvMnzPuPsw" name="Generics">
+        <modelElement href="SocialNetwork2.uml#_0pkHkNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SfJANqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SfJAdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0wJ3wNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfJAtqpEeSKGvMnzPuPsw" name="Vector">
+          <modelElement href="SocialNetwork2.uml#_0ujVQNqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SfJA9qpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0piSYdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SfJBNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1SH8YNqpEeSKGvMnzPuPsw" name="UserServices">
+    <modelElement href="SocialNetwork2.uml#_0lCM4NqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1SH8YdqpEeSKGvMnzPuPsw" position="-1193.0,-129.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_1SH8YtqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+      <modelElement href="SocialNetwork2.uml#_0lECENqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_1SH8Y9qpEeSKGvMnzPuPsw" name="Annotations">
+      <modelElement href="SocialNetwork2.uml#_0lzB4NqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <visibility xmi:id="_1SH8ZNqpEeSKGvMnzPuPsw" label="+"/>
+    <operations xmi:id="_1SIjcNqpEeSKGvMnzPuPsw" name="registrationService">
+      <modelElement href="SocialNetwork2.uml#_0lHFYNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SIjcdqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0lPoQNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SIjctqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SIjc9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0lITgNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjdNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SIjddqpEeSKGvMnzPuPsw" name="uname">
+        <modelElement href="SocialNetwork2.uml#_0lHscNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjdtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SIjd9qpEeSKGvMnzPuPsw" name="email">
+        <modelElement href="SocialNetwork2.uml#_0lHscdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjeNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SIjedqpEeSKGvMnzPuPsw" name="pass">
+        <modelElement href="SocialNetwork2.uml#_0lHsctqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjetqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SIje9qpEeSKGvMnzPuPsw" name="loginService">
+      <modelElement href="SocialNetwork2.uml#_0lUgwNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SIjfNqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0lanYNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SIjfdqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SIjftqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0lVu4NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjf9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SIjgNqpEeSKGvMnzPuPsw" name="uname">
+        <modelElement href="SocialNetwork2.uml#_0lVH0NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjgdqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SIjgtqpEeSKGvMnzPuPsw" name="pass">
+        <modelElement href="SocialNetwork2.uml#_0lVH0dqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjg9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SIjhNqpEeSKGvMnzPuPsw" name="SendFriendRequest">
+      <modelElement href="SocialNetwork2.uml#_0le40NqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SIjhdqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0lkYYNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SIjhtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SIjh9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0lff4NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjiNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SIjidqpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0le40dqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjitqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SIji9qpEeSKGvMnzPuPsw" name="FriendEmailToAdd">
+        <modelElement href="SocialNetwork2.uml#_0le40tqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjjNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SIjjdqpEeSKGvMnzPuPsw" name="AcceptAddFriend">
+      <modelElement href="SocialNetwork2.uml#_0lnbsNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SIjjtqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0luJYNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SIjj9qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SIjkNqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0lop0NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjkdqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1SIjktqpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0lnbsdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjk9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1SIjlNqpEeSKGvMnzPuPsw" name="FriendEmail">
+        <modelElement href="SocialNetwork2.uml#_0loCwNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjldqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1SIjltqpEeSKGvMnzPuPsw" name="CheckFriendRequests">
+      <modelElement href="SocialNetwork2.uml#_0lvXgNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1SIjl9qpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0lxMsNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1SIjmNqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1SIjmdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0lwloNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1SIjmtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1QrK4NqpEeSKGvMnzPuPsw" name="GroupController">
+    <modelElement href="SocialNetwork2.uml#_0kDVcNqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1QrK4dqpEeSKGvMnzPuPsw" position="-655.0,-24.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_1QrK4tqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+      <modelElement href="SocialNetwork2.uml#_0kEjkNqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_1QrK49qpEeSKGvMnzPuPsw" name="Annotations">
+      <modelElement href="SocialNetwork2.uml#_0k6RENqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <visibility xmi:id="_1QrK5NqpEeSKGvMnzPuPsw" label="+"/>
+    <operations xmi:id="_1Qrx8NqpEeSKGvMnzPuPsw" name="group">
+      <modelElement href="SocialNetwork2.uml#_0kFKoNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Qrx8dqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0kIN8NqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Qrx8tqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Qrx89qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0vyrYNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Qrx9NqpEeSKGvMnzPuPsw" name="Response">
+          <modelElement href="SocialNetwork2.uml#_0uMI4dqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1Qrx9dqpEeSKGvMnzPuPsw" name="createGroup">
+      <modelElement href="SocialNetwork2.uml#_0kNtgNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Qrx9tqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0kT0INqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Qrx99qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1Qrx-NqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0kO7oNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Qrx-dqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1Qrx-tqpEeSKGvMnzPuPsw" name="name">
+        <modelElement href="SocialNetwork2.uml#_0kNtgdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Qrx-9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Qrx_NqpEeSKGvMnzPuPsw" name="desc">
+        <modelElement href="SocialNetwork2.uml#_0kOUkNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Qrx_dqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1Qrx_tqpEeSKGvMnzPuPsw" name="privacy">
+        <modelElement href="SocialNetwork2.uml#_0kOUkdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1Qrx_9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1R-ycNqpEeSKGvMnzPuPsw" name="GroupServices">
+    <modelElement href="SocialNetwork2.uml#_0mFVwNqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1R_ZgNqpEeSKGvMnzPuPsw" position="-132.0,-5.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_1R_ZgdqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+      <modelElement href="SocialNetwork2.uml#_0mHyANqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_1R_ZgtqpEeSKGvMnzPuPsw" name="Annotations">
+      <modelElement href="SocialNetwork2.uml#_0mY3wNqpEeSKGvMnzPuPsw"/>
+    </stereotypes>
+    <visibility xmi:id="_1R_Zg9qpEeSKGvMnzPuPsw" label="+"/>
+    <operations xmi:id="_1R_ZhNqpEeSKGvMnzPuPsw" name="createGroup">
+      <modelElement href="SocialNetwork2.uml#_0mMqgNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1R_ZhdqpEeSKGvMnzPuPsw" name="Annotations">
+        <modelElement href="SocialNetwork2.uml#_0mWbgNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1R_ZhtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1R_Zh9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0mOfsNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1R_ZiNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1R_ZidqpEeSKGvMnzPuPsw" name="userId">
+        <modelElement href="SocialNetwork2.uml#_0mMqgdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1R_ZitqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1R_Zi9qpEeSKGvMnzPuPsw" name="name">
+        <modelElement href="SocialNetwork2.uml#_0mNRkNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1R_ZjNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1R_ZjdqpEeSKGvMnzPuPsw" name="desc">
+        <modelElement href="SocialNetwork2.uml#_0mNRkdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1R_ZjtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1R_Zj9qpEeSKGvMnzPuPsw" name="privacy">
+        <modelElement href="SocialNetwork2.uml#_0mN4oNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1R_ZkNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1S70sNqpEeSKGvMnzPuPsw" comments="_1S1uENqpEeSKGvMnzPuPsw" targetConnectionVisual="_1S2VINqpEeSKGvMnzPuPsw" name="GroupEntity">
+    <modelElement href="SocialNetwork2.uml#_0otzANqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1S70sdqpEeSKGvMnzPuPsw" position="433.0,-147.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_1S70stqpEeSKGvMnzPuPsw" label="+"/>
+    <attributes xmi:id="_1S70s9qpEeSKGvMnzPuPsw" name="name">
+      <modelElement href="SocialNetwork2.uml#_0wq1INqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1S70tNqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wsDQNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1S70tdqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1S70ttqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1S70t9qpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1S70uNqpEeSKGvMnzPuPsw" name="description">
+      <modelElement href="SocialNetwork2.uml#_0wsDQdqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1S70udqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wtRYNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1S70utqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1S70u9qpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1S70vNqpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1S70vdqpEeSKGvMnzPuPsw" name="privacy">
+      <modelElement href="SocialNetwork2.uml#_0wt4cNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S70vtqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1S70v9qpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1S70wNqpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1S70wdqpEeSKGvMnzPuPsw" name="ownerId">
+      <modelElement href="SocialNetwork2.uml#_0wufgNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S70wtqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1S70w9qpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1S70xNqpEeSKGvMnzPuPsw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_1S70xdqpEeSKGvMnzPuPsw" comments="_1S28MNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1S28MdqpEeSKGvMnzPuPsw" name="getName">
+      <modelElement href="SocialNetwork2.uml#_0ozSkNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S70xtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1S70x9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0oz5oNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1S70yNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1S70ydqpEeSKGvMnzPuPsw" comments="_1S3jQNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1S4KUNqpEeSKGvMnzPuPsw" name="getDesc">
+      <modelElement href="SocialNetwork2.uml#_0o0gsNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S70ytqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1S70y9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0o1u0NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1S70zNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1S70zdqpEeSKGvMnzPuPsw" comments="_1S4KUdqpEeSKGvMnzPuPsw" targetConnectionVisual="_1S4KUtqpEeSKGvMnzPuPsw" name="setName">
+      <modelElement href="SocialNetwork2.uml#_0o288NqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S70ztqpEeSKGvMnzPuPsw" label="+"/>
+      <parameters xmi:id="_1S70z9qpEeSKGvMnzPuPsw" name="name">
+        <modelElement href="SocialNetwork2.uml#_0o3kANqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1S700NqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1S700dqpEeSKGvMnzPuPsw" comments="_1S4xYNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1S4xYdqpEeSKGvMnzPuPsw" name="setDescription">
+      <modelElement href="SocialNetwork2.uml#_0o4yINqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S700tqpEeSKGvMnzPuPsw" label="+"/>
+      <parameters xmi:id="_1S7009qpEeSKGvMnzPuPsw" name="desc">
+        <modelElement href="SocialNetwork2.uml#_0o4yIdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1S701NqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1S701dqpEeSKGvMnzPuPsw" comments="_1S5YcNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1S5_gNqpEeSKGvMnzPuPsw" name="saveGroup">
+      <modelElement href="SocialNetwork2.uml#_0o6AQNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1S701tqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1S7019qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0o6AQdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1S702NqpEeSKGvMnzPuPsw" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_1Rcm8NqpEeSKGvMnzPuPsw" comments="_1RRAwNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RRAwdqpEeSKGvMnzPuPsw" name="User" associationsIn="_1RQZsNqpEeSKGvMnzPuPsw" associationsOut="_1RQZsNqpEeSKGvMnzPuPsw">
+    <modelElement href="SocialNetwork2.uml#_0mdwQNqpEeSKGvMnzPuPsw"/>
+    <visualProperties xmi:id="_1Rcm8dqpEeSKGvMnzPuPsw" position="10.0,-377.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_1Rcm8tqpEeSKGvMnzPuPsw" label="+"/>
+    <attributes xmi:id="_1Rcm89qpEeSKGvMnzPuPsw" name="id">
+      <modelElement href="SocialNetwork2.uml#_0wWsENqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1Rcm9NqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1Rcm9dqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1Rcm9tqpEeSKGvMnzPuPsw" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1Rcm99qpEeSKGvMnzPuPsw" name="name">
+      <modelElement href="SocialNetwork2.uml#_0wX6MNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1Rcm-NqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wZIUNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1Rcm-dqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1Rcm-tqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1Rcm-9qpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1Rcm_NqpEeSKGvMnzPuPsw" name="email">
+      <modelElement href="SocialNetwork2.uml#_0wZvYNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1Rcm_dqpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1Rcm_tqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1Rcm_9qpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1RdOANqpEeSKGvMnzPuPsw" name="password">
+      <modelElement href="SocialNetwork2.uml#_0waWcNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1RdOAdqpEeSKGvMnzPuPsw" name="LegacyStyledElement">
+        <modelElement href="SocialNetwork2.uml#_0wa9gNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1RdOAtqpEeSKGvMnzPuPsw" label="-"/>
+      <cardinality xmi:id="_1RdOA9qpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1RdOBNqpEeSKGvMnzPuPsw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_1RdOBdqpEeSKGvMnzPuPsw" name="currentActiveUser" staticAttribute="true">
+      <modelElement href="SocialNetwork2.uml#_0wbkkNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_hU0l0Nq8EeS-b7zAxl-89w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_hU4QMNq8EeS-b7zAxl-89w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_hVDPUNq8EeS-b7zAxl-89w" name="LegacyStyledElement"/>
+      <visibility xmi:id="_1RdOB9qpEeSKGvMnzPuPsw" label="+"/>
+      <cardinality xmi:id="_1RdOCNqpEeSKGvMnzPuPsw" label="1" max="1" min="1"/>
+      <type xmi:id="_1RdOCdqpEeSKGvMnzPuPsw" name="User">
+        <modelElement href="SocialNetwork2.uml#_0mdwQNqpEeSKGvMnzPuPsw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_1RdOCtqpEeSKGvMnzPuPsw" comments="_1RSO4NqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RS18NqpEeSKGvMnzPuPsw" name="User">
+      <modelElement href="SocialNetwork2.uml#_0mlFANqpEeSKGvMnzPuPsw"/>
+      <keywords xmi:id="_1RdOC9qpEeSKGvMnzPuPsw" keyword="create"/>
+      <visibility xmi:id="_1RdODNqpEeSKGvMnzPuPsw" label="-"/>
+      <outParameters xmi:id="_1RdODdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0mm6MdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdODtqpEeSKGvMnzPuPsw" name="User">
+          <modelElement href="SocialNetwork2.uml#_0mdwQNqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1RdOD9qpEeSKGvMnzPuPsw" name="name">
+        <modelElement href="SocialNetwork2.uml#_0mlFAdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOENqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1RdOEdqpEeSKGvMnzPuPsw" name="email">
+        <modelElement href="SocialNetwork2.uml#_0mlFAtqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOEtqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_1RdOE9qpEeSKGvMnzPuPsw" name="password">
+        <modelElement href="SocialNetwork2.uml#_0mlsENqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOFNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1RdOFdqpEeSKGvMnzPuPsw" comments="_1RTdANqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RTdAdqpEeSKGvMnzPuPsw" name="setId">
+      <modelElement href="SocialNetwork2.uml#_0moIUNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1RdOFtqpEeSKGvMnzPuPsw" label="-"/>
+      <parameters xmi:id="_1RdOF9qpEeSKGvMnzPuPsw" name="id">
+        <modelElement href="SocialNetwork2.uml#_0moIUdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOGNqpEeSKGvMnzPuPsw" name="long">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1RdOGdqpEeSKGvMnzPuPsw" comments="_1RUEENqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RUEEdqpEeSKGvMnzPuPsw" name="getName">
+      <modelElement href="SocialNetwork2.uml#_0mpWcNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1RdOGtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1RdOG9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0mp9gNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOHNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1RdOHdqpEeSKGvMnzPuPsw" comments="_1RUrINqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RUrIdqpEeSKGvMnzPuPsw" name="getPass">
+      <modelElement href="SocialNetwork2.uml#_0mqkkNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1RdOHtqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1RdOH9qpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0mrLoNqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOINqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_1RdOIdqpEeSKGvMnzPuPsw" comments="_1RVSMNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RVSMdqpEeSKGvMnzPuPsw" name="resetCurrentActiveUser" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0msZwNqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1RdOItqpEeSKGvMnzPuPsw" label="+"/>
+    </operations>
+    <operations xmi:id="_1RdOI9qpEeSKGvMnzPuPsw" comments="_1RV5QNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RV5QdqpEeSKGvMnzPuPsw" name="getUser" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0muO8NqpEeSKGvMnzPuPsw"/>
+      <visibility xmi:id="_1RdOJNqpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1RdOJdqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0u9k8NqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOJtqpEeSKGvMnzPuPsw" name="User">
+          <modelElement href="SocialNetwork2.uml#_0mdwQNqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1RdOJ9qpEeSKGvMnzPuPsw" name="json">
+        <modelElement href="SocialNetwork2.uml#_0muO8dqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOKNqpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_1RdOKdqpEeSKGvMnzPuPsw" comments="_1RWgUNqpEeSKGvMnzPuPsw" targetConnectionVisual="_1RWgUdqpEeSKGvMnzPuPsw" name="get_Friend_Requests" staticOperation="true">
+      <modelElement href="SocialNetwork2.uml#_0mxSQNqpEeSKGvMnzPuPsw"/>
+      <stereotypes xmi:id="_1RdOKtqpEeSKGvMnzPuPsw" name="Generics">
+        <modelElement href="SocialNetwork2.uml#_0m0VkNqpEeSKGvMnzPuPsw"/>
+      </stereotypes>
+      <visibility xmi:id="_1RdOK9qpEeSKGvMnzPuPsw" label="+"/>
+      <outParameters xmi:id="_1RdOLNqpEeSKGvMnzPuPsw">
+        <modelElement href="SocialNetwork2.uml#_0v5ZENqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOLdqpEeSKGvMnzPuPsw" name="Map">
+          <modelElement href="SocialNetwork2.uml#_0ug5AdqpEeSKGvMnzPuPsw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_1RdOLtqpEeSKGvMnzPuPsw" name="UserEmail">
+        <modelElement href="SocialNetwork2.uml#_0mxSQdqpEeSKGvMnzPuPsw"/>
+        <type xmi:id="_1RdOL9qpEeSKGvMnzPuPsw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
