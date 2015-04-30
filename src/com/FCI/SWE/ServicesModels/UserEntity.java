@@ -6,6 +6,11 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Vector;
 
+import com.FCI.SWE.Controller.AcceptNotify;
+import com.FCI.SWE.Controller.AddNotify;
+import com.FCI.SWE.Controller.MsgNotify;
+import com.FCI.SWE.Controller.NotificationInvoker;
+import com.FCI.SWE.Controller.NotificationNotify;
 import com.FCI.SWE.Models.MyModel;
 import com.FCI.SWE.Models.User;
 import com.google.appengine.api.datastore.DatastoreService;
@@ -35,11 +40,11 @@ public class UserEntity {
 	 * Command DP
 	 */
 	
-	//private static NotificationNotify Notify;
-	//static AddNotify addN = new AddNotify(Notify);
-	//static MsgNotify msgN = new MsgNotify(Notify);
-	//static AcceptNotify acceptN = new AcceptNotify(Notify);
-	//static NotificationInvoker Invoke = new NotificationInvoker();
+	private static NotificationNotify Notify = new NotificationNotify() ;
+	static AddNotify addN = new AddNotify(Notify);
+	static MsgNotify msgN = new MsgNotify(Notify);
+	static AcceptNotify acceptN = new AcceptNotify(Notify);
+	static NotificationInvoker Invoke = new NotificationInvoker();
 	/**
 	 * Command DP
 	 */
@@ -207,7 +212,7 @@ public class UserEntity {
 		FriendRequestRelationShip.setProperty("Status", "Pending");
 		datastore.put(FriendRequestRelationShip);
 		
-		//Invoke.placeNotifications(addN, UserEmail , FriendEmail);
+		Invoke.placeNotifications(addN, UserEmail , FriendEmail);
 		return true;	
 	}
 	
@@ -238,7 +243,7 @@ public class UserEntity {
 			  FriendAcceptRelationShip.setProperty( "Status" , "Accept" );
 			  datastore.put(FriendAcceptRelationShip);
 			  
-			  //Invoke.placeNotifications(acceptN, UserEmail,FriendEmail);
+			  Invoke.placeNotifications(acceptN, UserEmail,FriendEmail);
 			  return true;
 			}
 		}
@@ -370,24 +375,22 @@ public class UserEntity {
 		
 		Single_Message.setProperty( "DateTime" , dateFormat.format(Cal.getTime()).toString() );
 		datastore.put( Single_Message );	
-		//Invoke.placeNotifications(msgN, UserEmail,FriendEmail);
+		Invoke.placeNotifications(msgN, UserEmail,FriendEmail);
 	}
-	////////////////////////////////////////////////
+	
 	public static void Add_hashtag( String hashtagname , int number  )
 	{
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService(); 
 		Query gaeQuery = new Query("hashtag");
 		PreparedQuery pq = datastore.prepare(gaeQuery);
-		datastore = DatastoreServiceFactory.getDatastoreService();
 		List<Entity> list = pq.asList(FetchOptions.Builder.withDefaults());	
 		int List_Size = list.size() + 1 ;
 		Entity hashtag = new Entity("hashtag", List_Size );
 		hashtag.setProperty("Name", hashtagname );
 		hashtag.setProperty("Number", number );
+		hashtag.setProperty("DateTime", MyModel.Get_Current_DateTime() );
 		datastore.put(hashtag);
-
-		}
-	/////////////////////////////////////////////////
+	 }
 	
 	public static Vector<String> Get_MyMessages( String UserEmail)
 	{
@@ -647,6 +650,52 @@ public class UserEntity {
 			}
 			 
 		return false;	
+	}
+	
+	
+	public static void SharePostID( String UserEmail , long PostID)
+	{
+		
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+		Query gaeQueryF = new Query("Posts");
+		PreparedQuery pq = datastore.prepare(gaeQueryF);
+		int Posts_Size = MyModel.Get_Specific_Data_Store_Size("Posts");
+		
+		String PostPrivacy = null ; 
+		String PostContent = null ;
+		String Custom = null ; 
+		String PostFeeling = null ;
+		String PostFeelingDescription = null ;
+		String FriendEmail = null , DateTime , Likes = null , HashTag = null;
+
+		for (Entity entity : pq.asIterable())
+		{
+		 if( entity.getKey().getId() == PostID )
+		 {			 
+			 PostPrivacy = entity.getProperty("PostPrivacy").toString();
+			 PostContent = entity.getProperty("PostContent").toString() ;
+			 Custom = entity.getProperty("Custom").toString() ;
+			 PostFeeling = entity.getProperty("PostFeeling").toString() ;
+			 PostFeelingDescription = entity.getProperty("PostFeelingDescription").toString();
+			 Likes = entity.getProperty("Likes").toString() ;
+			 FriendEmail = entity.getProperty("FriendEmail").toString();	
+			 HashTag = entity.getProperty("HashTag").toString();
+		 }
+		}
+		
+		DateTime = MyModel.Get_Current_DateTime();
+		Entity CreatePost = new Entity("Posts",Posts_Size + 1);
+		CreatePost.setProperty("UserEmail", UserEmail );
+		CreatePost.setProperty("PostPrivacy", PostPrivacy );
+		CreatePost.setProperty("PostContent", PostContent );
+		CreatePost.setProperty("Custom", Custom);
+		CreatePost.setProperty("DateTime", MyModel.Get_Current_DateTime() );
+		CreatePost.setProperty("PostFeeling", PostFeeling);
+		CreatePost.setProperty("PostFeelingDescription" , PostFeelingDescription );
+		CreatePost.setProperty("Likes" , Likes );
+		CreatePost.setProperty("FriendEmail" , FriendEmail );
+		CreatePost.setProperty("HashTag" , HashTag );
+		datastore.put( CreatePost );
 	}
 	
 }

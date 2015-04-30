@@ -45,9 +45,9 @@
  </ul>  
 
 <h3> Write Post on friend timeline </h3> 
-	<form action="/social/WritePost" method="post">
+	<form action="/social/WritePostTofriendtimeline" method="post">
 	<label> Friend Email </label>
-	<input type="text" name="FriendEmail" /> <br>
+	<input type="text" name="FriendEmail" required/> <br>
 	
 	<label> HashTag </label>
 	<input type="text" name="HashTag" /> <br>
@@ -58,6 +58,7 @@
 	  <option value="Training"> Training </option>
 	  <option value="Running"> Running </option>
 	  <option value="Angry"> Angry </option>
+	  <option value="Sad"> Sad </option>
 	</select>
 	<input type="text" name="PostFeelingDescription" /> <br>
 	
@@ -75,21 +76,19 @@
 	<input type="hidden" name="UserEmail" value="${it.email}">	
 	</form>
 	
-	
-	<h3> Write Post on my timeline </h3> 
-	<form action="/social/WritePostTimeline" method="post">
-	<label> Your Email </label>
-	<input type="text" name="UserEmail" /> <br>
+	<h3> Write Post on my Timeline </h3> 
+	<form action="/social/WritePostToyourtimeline" method="post">
 	
 	<label> HashTag </label>
 	<input type="text" name="HashTag" /> <br>
 	
 	<label> Post Feelings </label> 
-	<select name="PostFeeling"> 
+	<select name="PostFeeling" required> 
 	  <option >  </option>
 	  <option value="Training"> Training </option>
 	  <option value="Running"> Running </option>
 	  <option value="Angry"> Angry </option>
+	  <option value="Sad"> Sad </option>
 	</select>
 	<input type="text" name="PostFeelingDescription" /> <br>
 	
@@ -103,10 +102,10 @@
 	Custom Friends : <input type="text" name="Custom" > <br>
 	<label> Post Content </label> <br>
 	<textarea name="PostContent" placeholder="Enter Your Post" required ></textarea> <br>
-	<input type="submit" value="Post" > <br>
-	<input type="hidden" name="UserEmail" value="${it.email}">	
-	</form>
-	
+	<input type="hidden" name="UserEmail" value="${it.email}">
+	<input type="hidden" name="FriendEmail" value="">
+	<input type="submit" value="Post" > <br>	
+	</form>	
 	   
 <h3> Check Notification </h3>
  <ul>
@@ -157,22 +156,12 @@
   </form>
  
  <h3> HashStatstics </h3>
-	<form action="/social/HashStatstics" method="post" autocomplete="on">
-	<label> HashTag Name :  </label>
-	<input type="text" name="HashTag" /> <br>
-		<input type="submit" value="Search" > <br>
-	
-	</form>  
-	
-	 <h3> Sharepost </h3>
-	<form action="/social/SharePostID" method="post" autocomplete="on">
+	<form action="/social/MyHashStatstics" method="post" autocomplete="on">
 	<ol>
-  	  <li> Name : <input type="text" postid="postid" required /> </li>
-      <li> <input type="submit" value="SharePost" />  </li>
+  	  <li> Name : <input type="text" name="HashTag" required /> </li>
+      <li> <input type="submit" value="GetStatstics" />  </li>
 	</ol>
-	<input type="hidden" name="UserEmail" value="${it.email}">
 	</form>  
-
 
  <h3> Logout </h3>
  <ul>

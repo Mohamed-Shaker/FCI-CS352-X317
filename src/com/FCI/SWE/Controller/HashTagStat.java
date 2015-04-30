@@ -12,9 +12,8 @@ import com.google.appengine.api.datastore.Query;
 
 public class HashTagStat {
 	
-	public int show(String HashTagName)
+	public static int show(String HashTagName)
 	{
-
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		Query gaeQuery2 = new Query("hashtag");
 		PreparedQuery q = datastore.prepare(gaeQuery2); 
@@ -25,18 +24,9 @@ public class HashTagStat {
 		int newNumber = 0;
 
 		for (Entity entity : q.asIterable()) 
-		{ 
-			if (   entity.getProperty("Name").toString().equals(HashTagName)	  ) 
-			{
-				newNumber =Integer.parseInt(hashtag.getProperty("Number").toString() );
-
-			}
-			else
-			{
-				return 0;
-			}
-
-		}
+		    if ( entity.getProperty("Name").toString().equals(HashTagName)	) 
+			    newNumber = Integer.parseInt(entity.getProperty("Number").toString() );
+	
 		return newNumber;
 	}
 

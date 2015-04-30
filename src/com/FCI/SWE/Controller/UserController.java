@@ -3,6 +3,7 @@ package com.FCI.SWE.Controller;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
+
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -10,10 +11,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
 import org.glassfish.jersey.server.mvc.Viewable;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 import com.FCI.SWE.Models.MyModel;
 import com.FCI.SWE.Models.User;
 import com.FCI.SWE.Services.GroupChat;
@@ -529,28 +532,29 @@ public class UserController {
         return MyModel.Json_Result_Msg ;
 }
 
-
 	@POST	
-	@Path("/WritePost")
+	@Path("/WritePostTofriendtimeline")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String WritePost( 
+	public String WritePostTofriendtimeline( 
 							  @FormParam("UserEmail") String UserEmail ,
 							  @FormParam("PostPrivacy") String PostPrivacy ,
 							  @FormParam("PostContent") String PostContent , 
 							  @FormParam("Custom") String Custom ,
 							  @FormParam("PostFeeling") String PostFeeling ,
 							  @FormParam("PostFeelingDescription") String PostFeelingDescription ,
-							  @FormParam("FriendEmail") String FriendEmail
+							  @FormParam("FriendEmail") String FriendEmail ,
+							  @FormParam("HashTag") String HashTag
                             ) throws JSONException , ParseException  
 {
-		String serviceUrl = Domain_Name + "/rest/WritePost";
+		String serviceUrl = Domain_Name + "/rest/WritePostTofriendtimeline";
 		String urlParameters = "UserEmail=" +  UserEmail + 
 				               "&PostPrivacy=" + PostPrivacy +
 				               "&PostContent=" + PostContent + 
 				               "&Custom=" + Custom +
 				               "&PostFeeling=" + PostFeeling + 
 				               "&PostFeelingDescription=" + PostFeelingDescription +
-				               "&FriendEmail=" + FriendEmail ;
+				               "&FriendEmail=" + FriendEmail +
+				               "&HashTag=" + HashTag ;
 
         String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
                                     "application/x-www-form-urlencoded;charset=UTF-8");
@@ -575,6 +579,56 @@ public class UserController {
         MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
         return MyModel.Json_Result_Msg ;
 }
+	///////////////////////////////////////////////////////////////
+	@POST	
+	@Path("/WritePostToyourtimeline")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String WritePostToyourtimeline( 
+							  @FormParam("UserEmail") String UserEmail ,
+							  @FormParam("PostPrivacy") String PostPrivacy ,
+							  @FormParam("PostContent") String PostContent , 
+							  @FormParam("Custom") String Custom ,
+							  @FormParam("PostFeeling") String PostFeeling ,
+							  @FormParam("PostFeelingDescription") String PostFeelingDescription ,
+							  @FormParam("FriendEmail") String FriendEmail , 
+							  @FormParam("HashTag") String HashTag
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/WritePostTimeline";
+		String urlParameters = "UserEmail=" +  UserEmail + 
+				               "&PostPrivacy=" + PostPrivacy +
+				               "&PostContent=" + PostContent + 
+				               "&Custom=" + Custom +
+				               "&PostFeeling=" + PostFeeling + 
+				               "&PostFeelingDescription=" + PostFeelingDescription +
+				               "&FriendEmail=" + FriendEmail +
+        					   "&HashTag=" + HashTag ;
+		
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Post Has Not Been Created Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Post Privacy Not Selected.";
+        else if ( MyModel.MyJsonObject.get("Status").equals("3") )
+        	 MyModel.Json_Result_Msg =  "No Data In The Post";
+        else if ( MyModel.MyJsonObject.get("Status").equals("4") )
+        	 MyModel.Json_Result_Msg = "Custom Friends Are Not Specified.";        
+        else if ( MyModel.MyJsonObject.get("Status").equals("5") )
+       	 MyModel.Json_Result_Msg = "Post Feeling Description Not Inserted.";        
+        else if ( MyModel.MyJsonObject.get("Status").equals("6") )
+        	 MyModel.Json_Result_Msg = "Post Has Been Created Successfully";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+}
+
+	////////////////////////////////////////////////////////
 
 	@POST
 	@Path("/ViewMyTimeLine")
@@ -590,40 +644,6 @@ public class UserController {
 		MyMap.put( "MyTimeLine" , MyTimeLine );
 		return Response.ok(new Viewable("/jsp/MyTimeLine.jsp" , MyMap ) ).build();
 	}
-	
-	
-	@POST	
-	@Path("/SharePostID")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sharePostID( 
-							  @FormParam("UserEmail") String UserEmail ,				
-							  @FormParam("postid") String postid
-                            ) throws JSONException , ParseException  
-{
-		String serviceUrl = Domain_Name + "/rest/SharePostID";
-		String urlParameters = "UserEmail=" +  UserEmail + 
-				               "&postid=" + postid ;
-
-        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
-                                    "application/x-www-form-urlencoded;charset=UTF-8");
-        System.out.println("retJson : " + retJson );
-        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
-        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
-        
-        MyModel.Json_Result_Msg = "Post Has Not Been Liked Successfully." ;
-        if ( MyModel.MyJsonObject.get("Status").equals("1") )
-        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
-        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
-        	 MyModel.Json_Result_Msg = "Post ID Is Empty.";
-        else if ( MyModel.MyJsonObject.get("Status").equals("5") )
-       	     MyModel.Json_Result_Msg = "Post ID Was Not Found .";
-        else if ( MyModel.MyJsonObject.get("Status").equals("6") )
-      	     MyModel.Json_Result_Msg = "Post ID Liked Successfully .";
-        
-        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
-        return MyModel.Json_Result_Msg ;
-  }
-
 	
 	@POST	
 	@Path("/LikePostID")
@@ -657,6 +677,38 @@ public class UserController {
         return MyModel.Json_Result_Msg ;
   }
 	
+	/////////////////////////////////////////////////////////////////////
+	@POST	
+	@Path("/SharePost")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sharePostID( 
+							  @FormParam("UserEmail") String UserEmail ,				
+							  @FormParam("postid") String postid
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/SharePost";
+		String urlParameters = "UserEmail=" +  UserEmail + 
+				               "&postid=" + postid ;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        MyModel.Json_Result_Msg = "Post Has Not Been Shared Successfully." ;
+        if ( MyModel.MyJsonObject.get("Status").equals("1") )
+        	 MyModel.Json_Result_Msg = "UserEmail Is Empty.";        	 
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg = "Post ID Is Empty.";
+        else if ( MyModel.MyJsonObject.get("Status").equals("3") )
+      	     MyModel.Json_Result_Msg = "Post ID Shared Successfully .";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+  }
+
+	/////////////////////////////////////////////////////////////////////
 	@POST
 	@Path("/ViewPagesToLike")
 	public Response ViewPagesToLike( @FormParam("UserEmail") String UserEmail )
@@ -705,4 +757,35 @@ public class UserController {
         return MyModel.Json_Result_Msg ;
   }
 	
+	@POST	
+	@Path("/MyHashStatstics")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String MyHashStatstics( 
+								@FormParam("HashTag") String HashTag 
+                            ) throws JSONException , ParseException  
+{
+		String serviceUrl = Domain_Name + "/rest/MyHashStatstics";
+		String urlParameters = "HashTag=" +  HashTag;
+
+        String retJson = Connection.connect(serviceUrl, urlParameters, "POST",
+                                    "application/x-www-form-urlencoded;charset=UTF-8");
+        
+        System.out.println("retJson : " + retJson );
+        MyModel.MyObject = MyModel.MyJsonParser.parse( retJson ) ;
+        MyModel.MyJsonObject = (JSONObject) MyModel.MyObject;
+        
+        if ( MyModel.MyJsonObject.get("Status").equals("3") )
+        	 {
+         	  System.out.println("Here");
+        	  MyModel.Json_Result_Msg = "HashTag stat : "+ HashTagStat.show(HashTag);
+        	 }
+        else if ( MyModel.MyJsonObject.get("Status").equals("1") )
+       	 MyModel.Json_Result_Msg =  "No HashTag enterd";
+
+        else if ( MyModel.MyJsonObject.get("Status").equals("2") )
+        	 MyModel.Json_Result_Msg =  "No HashTag with this name IDIOT";
+        
+        MyModel.MyJsonObject.clear(); /** Remove Content Inside Json Object.*/
+        return MyModel.Json_Result_Msg ;
+}
 }

@@ -30,10 +30,10 @@
 	</c:forEach>
   </form>
   
- <form action="/social/SharePostID" method="post">
+ <form action="/social/SharePost" method="post">
 	<label> Enter Post ID To Share : </label>
-	<input type="text" name="PostID" placeholder="Enter Post ID" required/>
-	<input type="submit" value="Share Post"> <br>
+	<input type="text" name="postid" required />
+	<li> <input type="submit" value="SharePost" required/>  </li>
 	
 	<c:forEach items="${it.MyEmail}"  var="Me">
 	 <input type="hidden" name="UserEmail" value="${Me}">

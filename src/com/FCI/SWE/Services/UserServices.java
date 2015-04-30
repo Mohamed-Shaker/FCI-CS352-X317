@@ -12,16 +12,13 @@ import javax.ws.rs.core.MediaType;
 
 import org.json.simple.JSONObject;
 
-import com.FCI.SWE.Controller.AcceptNotify;
-import com.FCI.SWE.Controller.AddNotify;
-import com.FCI.SWE.Controller.MsgNotify;
-import com.FCI.SWE.Controller.NotificationInvoker;
-import com.FCI.SWE.Controller.NotificationNotify;
+import com.FCI.SWE.Controller.*;
 import com.FCI.SWE.Models.MyModel;
 import com.FCI.SWE.Models.User;
 import com.FCI.SWE.ServicesModels.UserEntity;
 import com.google.appengine.labs.repackaged.org.json.JSONException;
 
+ 
 /**
  * This class contains REST services, also contains action function for web
  * application
@@ -31,6 +28,7 @@ import com.google.appengine.labs.repackaged.org.json.JSONException;
  * @since 2014-02-12
  *
  */
+
 @Path("/")
 @Produces(MediaType.TEXT_PLAIN)
 public class UserServices {
@@ -42,6 +40,8 @@ public class UserServices {
 	
 	private static Msg_Subject MyMsg_Subject ;
 	private static Vector<Msg_Observer> MyMsg_Observers;
+	
+	IPost post;
 	
 	/*@GET
 	@Path("/index")
@@ -331,21 +331,22 @@ public class UserServices {
 		
 		return MyModel.MyJsonObject.toString();
 	}
-	
-	
+		
 	@SuppressWarnings("unchecked")
 	@POST
-	@Path("/WritePost")
-	public String WritePost( 
+	@Path("/WritePostTofriendtimeline")
+	public String WritePostTofriendtimeline( 
 							  @FormParam("UserEmail") String UserEmail ,
 			  				  @FormParam("PostPrivacy") String PostPrivacy ,
 			  				  @FormParam("PostContent") String PostContent , 
 			  				  @FormParam("Custom") String Custom ,
 							  @FormParam("PostFeeling") String PostFeeling ,
 							  @FormParam("PostFeelingDescription") String PostFeelingDescription ,
-							  @FormParam("FriendEmail") String FriendEmail 
+							  @FormParam("FriendEmail") String FriendEmail , 
+							  @FormParam("HashTag") String HashTag
    						    ) throws JSONException
 	{
+		IPost newPost = new Post_FriendTimeLine();
 		if( UserEmail.compareTo("") == 0 )
 			MyModel.MyJsonObject.put( "Status" , "1" );	
 		else if( PostPrivacy.compareTo("") == 0 )
@@ -358,11 +359,59 @@ public class UserServices {
 			MyModel.MyJsonObject.put( "Status" , "5" );
 		else   
 		{		
-		  if( UserEntity.Create_Post(UserEmail, PostPrivacy, PostContent, Custom , PostFeeling , PostFeelingDescription , FriendEmail ) )
+		  if( newPost.Post_This(UserEmail, PostPrivacy, PostContent, Custom , PostFeeling , PostFeelingDescription , FriendEmail , HashTag ) )
 			  MyModel.MyJsonObject.put( "Status" , "6" );
+		  if( HashTag.compareTo("") != 0 )
+			  {
+			    int Size = HashTagStat.show( HashTag ) + 1 ;
+			    UserEntity.Add_hashtag( HashTag , Size );
+			  }
+		    
 		}
 		return MyModel.MyJsonObject.toString();
 	}
+
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/WritePostTimeline")
+	public String WritePostTIMELINE(
+			                  @FormParam("UserEmail") String UserEmail	,		  				  
+			                  @FormParam("PostPrivacy") String PostPrivacy ,
+			  				  @FormParam("PostContent") String PostContent , 
+			  				  @FormParam("Custom") String Custom ,
+							  @FormParam("PostFeeling") String PostFeeling ,
+							  @FormParam("PostFeelingDescription") String PostFeelingDescription ,
+							  @FormParam("FriendEmail") String FriendEmail ,
+							  @FormParam("HashTag") String HashTag 
+   						    ) throws JSONException
+	{
+		Post_Timeline newPost = new Post_Timeline();
+		if( UserEmail.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		else if( PostPrivacy.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "2" );
+		
+		else if( PostContent.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "3" );
+		
+		else if( Custom.compareTo("") == 0 && PostPrivacy.compareTo("Custom") == 0)
+			MyModel.MyJsonObject.put( "Status" , "4" );
+		else if( PostFeeling.compareTo("") != 0 && PostFeelingDescription.compareTo("") == 0)
+			MyModel.MyJsonObject.put( "Status" , "5" );
+		else   
+		{		
+		  if( newPost.Post_This(UserEmail, PostPrivacy, PostContent, Custom, PostFeeling, PostFeelingDescription, FriendEmail , HashTag))
+			  MyModel.MyJsonObject.put( "Status" , "6" );
+		  if( HashTag.compareTo("") != 0 )
+		  {
+		    int Size = HashTagStat.show( HashTag ) + 1 ;
+		    UserEntity.Add_hashtag( HashTag , Size );
+		  }
+		  
+		}
+		return MyModel.MyJsonObject.toString();
+	}
+
 
 
 	@SuppressWarnings("unchecked")
@@ -386,6 +435,27 @@ public class UserServices {
 		return MyModel.MyJsonObject.toString();
 	}
 	
+	@POST
+	@Path("/SharePost")
+	public String SharePost ( 
+			                  @FormParam("UserEmail") String UserEmail ,
+						      @FormParam("postid") String postid 
+						    ) 
+	{
+		if( UserEmail.compareTo("") == 0 ) 
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		long Post_Id = Long.parseLong( postid.toString() );
+		if( Post_Id <= 0 )
+			MyModel.MyJsonObject.put( "Status" , "2" );
+		else   
+		{
+			UserEntity.SharePostID( UserEmail , Post_Id );
+			MyModel.MyJsonObject.put( "Status" , "3" );
+		}
+		return MyModel.MyJsonObject.toString();
+	}
+	
+	
 
 	@SuppressWarnings("unchecked")
 	@POST
@@ -404,6 +474,26 @@ public class UserServices {
 		  if( UserEntity.LikePage( UserEmail , PagesToLike ) )
 			  MyModel.MyJsonObject.put( "Status" , "3" );
 		  else MyModel.MyJsonObject.put( "Status" , "4" );
+		}
+		return MyModel.MyJsonObject.toString();
+	}
+		
+	@SuppressWarnings("unchecked")
+	@POST
+	@Path("/MyHashStatstics")
+	public String MyHashStatstics(						  
+							     @FormParam("HashTag") String HashTag 
+   						       ) throws JSONException
+	{
+		System.out.println( "HT : " + HashTag  );
+		System.out.println("Errorrr : " + HashTagStat.show(HashTag));	 
+		if( HashTag.compareTo("") == 0 )
+			MyModel.MyJsonObject.put( "Status" , "1" );	
+		else   
+		{
+		  if( HashTagStat.show(HashTag) == 0 )
+			   MyModel.MyJsonObject.put( "Status" , "2" );
+		  else MyModel.MyJsonObject.put( "Status" , "3" );
 		}
 		return MyModel.MyJsonObject.toString();
 	}

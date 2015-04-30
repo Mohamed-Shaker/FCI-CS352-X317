@@ -3,16 +3,15 @@ package com.FCI.SWE.Controller;
 public abstract class IPost {
 
 	
-	public abstract boolean  Post_This 
-      (      String UserEmail , 
+	public abstract boolean  Post_This( String UserEmail , 
 		     String PostPrivacy , 
 		     String PostContent , 
 		     String Custom , 
 		     String PostFeeling , 
 		     String PostFeelingDescription , 
-		     String FriendEmail,
+		     String FriendEmail , 
 		     String HashTag
-     );
+ );
 	
 	
 	/*
