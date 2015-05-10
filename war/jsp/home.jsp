@@ -44,6 +44,15 @@
    </li>
  </ul>  
 
+<h3> Check Message </h3>
+ <ul>
+   <li>
+	<form action="/social/CheckRecievedMsgs" method="post">
+	<input type="submit" value="Check Coming Messages"> <br>
+	<input type="hidden" name="UserEmail" value="${it.email}">
+	</form>
+   </li>
+ </ul>  
 <h3> Write Post on friend timeline </h3> 
 	<form action="/social/WritePostTofriendtimeline" method="post">
 	<label> Friend Email </label>

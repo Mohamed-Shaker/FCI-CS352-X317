@@ -1,7 +1,7 @@
 package com.FCI.SWE.Services;
 
 public abstract class Msg_Subject {
-	
+
 	
 	public abstract void Remove_Observer( Msg_Observer O ); /* De-Attach */
 	

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.FCI.SWE.Controller.UserControllerTest">
+        <methods>
+          <include name="SendMsg"/>
+          <include name="AcceptFriendRequest"/>
+          <include name="index"/>
+          <include name="ViewMyTimeLine"/>
+          <include name="LikePostID"/>
+          <include name="signUp"/>
+          <include name="SendGroupChatMsg"/>
+          <include name="CheckGroupChatMessages"/>
+          <include name="CheckFriendRequests"/>
+          <include name="WritePostToyourtimeline"/>
+          <include name="LikePage"/>
+          <include name="sharePostID"/>
+          <include name="ViewPagesToLike"/>
+          <include name="LogOUt"/>
+          <include name="home"/>
+          <include name="SendFriendRequest"/>
+          <include name="CheckMyNotification"/>
+          <include name="ReplyToGroupChat"/>
+          <include name="WritePostTofriendtimeline"/>
+          <include name="CheckRecievedMsgs"/>
+          <include name="CreatePage"/>
+          <include name="MyHashStatstics"/>
+          <include name="SendGroupChat"/>
+          <include name="login"/>
+          <include name="ListOfMyFriends"/>
+        </methods>
+      </class> <!-- com.FCI.SWE.Controller.UserControllerTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -72,7 +72,6 @@ public class UserController {
 	/**
 	 * Action function to render login page this function will be executed using
 	 * url like this /rest/login
-	 * 
 	 * @return login page
 	 */
 	@GET

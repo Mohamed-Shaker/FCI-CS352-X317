@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestDependency]">
+  <test name="TestCase1(failed)">
+    <classes>
+      <class name="com.FCI.SWE.ServicesModels.com.FCI.SWE.ServicesModels.UserEntityTest">
+        <methods>
+          <include name="getUser"/>
+          <include name="Get_MyFriends"/>
+        </methods>
+      </class> <!-- com.FCI.SWE.ServicesModels.com.FCI.SWE.ServicesModels.UserEntityTest -->
+    </classes>
+  </test> <!-- TestCase1(failed) -->
+</suite> <!-- Failed suite [TestDependency] -->
